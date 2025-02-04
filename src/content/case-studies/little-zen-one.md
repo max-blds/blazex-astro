@@ -4,18 +4,18 @@ description: "How Conversion Collective helped North America's largest baby wrap
 badge: "ECOMMERCE SUCCESS"
 image: "/images/case/littlezenone.png"
 stats:
-  - key: "Revenue Growth"
-    value: "2X"
+  - key: "Program Growth"
+    value: "500%"
   - key: "Program Users"
-    value: "5K+"
+    value: "11K+"
   - key: "Timeline"
     value: "2024"
 ---
 
 ## **Key Results at a Glance**
 - **2X** revenue growth in 2024
-- **5,000+** customers served through try-before-you-buy program
-- **#1** baby wrap retailer in North America
+- **500%** program growth in 2024
+- **11,400+** customers served through try-before-you-buy program
 
 ---
 
