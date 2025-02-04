@@ -1,0 +1,73 @@
+{
+  "main": [
+    {
+      "name": "About Us",
+      "url": "/about"
+    },
+    {
+      "name": "Services",
+      "url": "/services"
+    },
+    {
+      "name": "Case Studies",
+      "url": "/case-studies"
+    },
+    {
+      "name": "Platforms",
+      "url": "/platforms"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "footer": [
+    {
+      "title": "Solutions",
+      "children": [
+        {
+          "name": "Services",
+          "url": "/services"
+        },
+        {
+          "name": "Case Studies",
+          "url": "/case-studies"
+        },
+        {
+          "name": "Platforms",
+          "url": "/platforms"
+        }
+      ]
+    },
+    {
+      "title": "Company",
+      "children": [
+        {
+          "name": "About",
+          "url": "/about"
+        },
+        {
+          "name": "Careers",
+          "url": "/contact"
+        },
+        {
+          "name": "Contact",
+          "url": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Legal",
+      "children": [
+        {
+          "name": "Terms",
+          "url": "/terms"
+        },
+        {
+          "name": "Privacy",
+          "url": "/privacy"
+        }
+      ]
+    }
+  ]
+}

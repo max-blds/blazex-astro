@@ -1,0 +1,47 @@
+---
+import About from "@/components/homepage/About.astro";
+import Blog from "@/components/homepage/Blog.astro";
+import Feature from "@/components/homepage/Feature.astro";
+import HomeCta from "@/components/homepage/HomeCta.astro";
+import Integration from "@/components/homepage/Integration.astro";
+import Step from "@/components/homepage/Step.astro";
+import Base from "@/layouts/Base.astro";
+import Hero from "@/layouts/components/homepage/Hero.astro";
+import Review from "@/layouts/components/homepage/Review.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const homepage = (await getEntry(
+  "homepage",
+  "-index"
+)) as CollectionEntry<"homepage">;
+const { hero, brand, about, step, feature, integration, review, cta } =
+  homepage.data;
+---
+
+<Base>
+  <Hero hero={hero} brand={brand} />
+  <About about={about} />
+  <Step step={step} />
+  <Feature feature={feature} />
+  <Integration integration={integration} />
+
+  <section class="section">
+    <div class="container">
+      <p
+        set:html={markdownify(review.badge)}
+        class="text-tertiary text-xl lg:text-center mb-4"
+        data-aos="fade-up-sm"
+      />
+      <h2
+        set:html={markdownify(review.title)}
+        class="lg:text-center max-xl:h3 mb-16"
+        data-aos="fade-up-sm"
+      />
+      <Review />
+    </div>
+  </section>
+  <!-- <Blog /> -->
+  <HomeCta cta={cta} />
+</Base>

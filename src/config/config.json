@@ -1,0 +1,50 @@
+{
+  "site": {
+    "title": "Conversion Collective - Performance Marketing Agency",
+    "base_url": "http://conversioncollective.io/",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "119",
+    "logo_height": "40",
+    "logo_text": "Conversion Collective"
+  },
+
+  "settings": {
+    "sticky_header": true,
+    "default_theme": "system",
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog"
+  },
+
+  "subscription": {
+    "enable": false,
+    "form_action": "#"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "footer_text": "Conversion Collective manages all aspects of campaign management from creative to optimization, helping clients achieve their ROAS goals.",
+    "copyright": "Copyright © 2024 All Rights Reserved by Conversion Collective"
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Contact Us",
+    "link": "#contact"
+  },
+
+  "disqus": {
+    "enable": false,
+    "shortname": "",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Conversion Collective",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Performance marketing agency specializing in Content arbitrage and RSOC campaigns"
+  }
+}

@@ -1,0 +1,123 @@
+---
+import config from "@/config/config.json";
+import DynamicIcon from "@/helpers/DynamicIcon";
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import CallToAction from "@/partials/CallToAction.astro";
+import { getEntry, type CollectionEntry } from "astro:content";
+
+const contact = (await getEntry(
+  "contact",
+  "-index"
+)) as CollectionEntry<"contact">;
+const { title, description, meta_title, connect } = contact.data;
+
+const cta = (await getEntry(
+  "ctaSection",
+  "call-to-action"
+)) as CollectionEntry<"ctaSection">;
+---
+
+<Base title={title} meta_title={meta_title} description={description}>
+  <section class="section" data-aos="fade-up-sm">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-12" data-aos="fade-up-sm">
+          <h1
+            set:html={markdownify(title)}
+            class="text-center max-xl:h2 mb-6"
+            data-aos="fade-up-sm"
+          />
+          <p
+            set:html={markdownify(description)}
+            class="text-center text-balance"
+            data-aos="fade-up-sm"
+          />
+        </div>
+
+        <div class="col-12 md:col-10 mx-auto" data-aos="fade-up-sm">
+          <div class="p-8 md:p-16 shadow-lg rounded-2xl">
+            <form action="https://formspree.io/f/xjkgrzae" method="POST">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                      id="name"
+                      name="name"
+                      class="form-input"
+                      placeholder="Your Name"
+                      type="text"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-6">
+                    <label for="email" class="form-label">
+                      Email Address
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="Your Email Address"
+                      type="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-6">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="form-input"
+                      placeholder="How can we help you?"
+                      rows="8"
+                      required></textarea>
+                  </div>
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary w-full">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="row g-4 justify-around md:justify-center">
+            {
+              connect.map((c: any, i: number) => (
+                <div
+                  class="col-6 md:col-3 text-center"
+                  data-aos="fade-up-sm"
+                  data-aos-delay={i * 50}
+                >
+                  <div class="mx-auto rounded-full w-fit bg-theme-light mb-5">
+                    <DynamicIcon
+                      icon={c.icon}
+                      className="text-secondary p-6 lg:p-[3.2rem] text-7xl lg:text-9xl"
+                    />
+                  </div>
+
+                  <p set:html={markdownify(c.key)} class="text-xl" />
+                  <p
+                    set:html={markdownify(c.value)}
+                    class="text-lg text-text/70"
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallToAction cta={cta.data} />
+</Base>

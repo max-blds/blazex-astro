@@ -1,0 +1,95 @@
+---
+import BlogCard from "@/components/BlogCard.astro";
+import ImageMod from "@/components/ImageMod.astro";
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import dateFormat from "@/lib/utils/dateFormat";
+import { markdownify } from "@/lib/utils/textConverter";
+import CallToAction from "@/partials/CallToAction.astro";
+import {
+  getEntry,
+  render,
+  type CollectionEntry,
+  type CollectionKey,
+} from "astro:content";
+
+export async function getStaticPaths() {
+  const { blog_folder } = config.settings;
+  const allBlogs = await getSinglePage(blog_folder as CollectionKey);
+  const paths = allBlogs.map((blog) => ({
+    params: {
+      single: (blog as any).id,
+    },
+    props: { blog },
+  }));
+  return paths;
+}
+
+const { blog_folder } = config.settings;
+const allBlogs = await getSinglePage(blog_folder as CollectionKey);
+const call_to_action = (await getEntry(
+  "ctaSection",
+  "call-to-action"
+)) as CollectionEntry<"ctaSection">;
+
+// declare any time for blog
+const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
+const { title, meta_title, description, image, date } = blog.data;
+const { Content } = await render(blog);
+---
+
+<Base title={title} description={description} meta_title={meta_title}>
+  <section class="section">
+    <div class="container">
+      {
+        date && (
+          <p
+            class="text-tertiary text-center mb-6 text-lg"
+            data-aos="fade-up-sm"
+          >
+            {dateFormat(date)}
+          </p>
+        )
+      }
+      <h1
+        set:html={markdownify(title)}
+        class="text-center max-xl:h2 text-balance mb-20"
+        data-aos="fade-up-sm"
+      />
+      <div data-aos="fade-up-sm">
+        <ImageMod
+          src={image!}
+          alt={image!}
+          width={1256}
+          height={719}
+          class="w-full aspect-video object-cover rounded-xl mb-11"
+        />
+      </div>
+
+      <article
+        class="bg-theme-light px-14 py-8 lg:px-52 lg:py-24 rounded-2xl"
+        data-aos="fade-up-sm"
+      >
+        <div class="content">
+          <Content />
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <h4 class="mb-11" data-aos="fade-up-sm">Read more articles</h4>
+      <div class="row g-5">
+        {
+          allBlogs
+            .slice(0, 2)
+            .map((blog, i) => <BlogCard blog={blog} index={i} />)
+        }
+      </div>
+    </div>
+  </section>
+
+  <CallToAction cta={call_to_action.data} />
+</Base>

@@ -1,0 +1,60 @@
+---
+import Brand from "@/components/Brand.astro";
+import CaseCard from "@/components/case/CaseCard.astro";
+import Base from "@/layouts/Base.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import CallToAction from "@/partials/CallToAction.astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
+
+const caseIndex = (await getEntry("case-studies", "-index")) as CollectionEntry<"case-studies">;
+const { title, description, hero } = caseIndex.data;
+const caseStudies = await getCollection('case-studies');
+
+// Filter out the index file and add slugs
+const filteredCases = caseStudies
+  .filter(entry => !entry.id.endsWith('-index.md'))
+  .map(entry => ({
+    ...entry,
+    slug: entry.id.replace(/^case-studies\//, '').replace(/\.md$/, '')
+  }));
+
+const call_to_action = (await getEntry(
+  "ctaSection",
+  "call-to-action"
+)) as CollectionEntry<"ctaSection">;
+---
+
+<Base title={title} meta_title={title} description={description}>
+  <section class="section pb-0">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center">
+        <h1
+          class="pb-4"
+          data-aos="fade-up-sm"
+          set:html={markdownify(hero!.title)}
+        />
+        <p
+          class="pb-8 text-balance"
+          data-aos="fade-up-sm"
+          set:html={markdownify(hero!.content)}
+        />
+      </div>
+    </div>
+  </section>
+
+  <Brand />
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row g-4">
+        {filteredCases.map((caseItem, i) => (
+          <CaseCard caseItem={caseItem} i={i} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction cta={call_to_action.data} />
+</Base>

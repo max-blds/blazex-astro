@@ -1,0 +1,173 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import Button from "@/shortcodes/Button";
+import { FaStar } from "react-icons/fa6";
+import ImageMod from "../ImageMod.astro";
+import CustomButton from "../CustomButton.astro";
+
+const { hero, brand } = Astro.props;
+---
+
+<section class="section overflow-x-hidden relative lg:pt-[135px]">
+  <ImageMod
+    src="/images/homepage/green-pattern.png"
+    alt="green pattern"
+    width={658}
+    height={496}
+    class="max-lg:hidden w-[35%] absolute top-o right-0 -translate-y-[40%]"
+  />
+  <div class="container">
+    <div class="row max-lg:gy-5 items-stretch">
+      <div class="col-12 lg:col-7">
+        <h1
+          set:html={markdownify(hero.title)}
+          class="max-xl:h2 mb-6 max-lg:text-center"
+          data-aos="fade-up-sm"
+        />
+        <p
+          set:html={markdownify(hero.content)}
+          class="mb-10 text-2xl max-lg:text-center"
+          data-aos="fade-up-sm"
+        />
+        <div
+          class="flex flex-col lg:flex-row items-center mb-10"
+          data-aos="fade-up-sm"
+        >
+          {
+            hero.button_1.enable && (
+              <CustomButton
+                link={hero.button_1.link}
+                label={hero.button_1.label}
+              />
+            )
+          }
+          {
+            hero.button_2.enable && (
+              <Button
+                link={hero.button_2.link}
+                label={hero.button_2.label}
+                style="outline"
+              />
+            )
+          }
+        </div>
+        <div class="flex flex-col lg:flex-row items-center gap-[18px]">
+          <div class="w-fit" data-aos="fade-up-sm">
+            {
+              hero.client.images.map((client: any, i: number) => (
+                <ImageMod
+                  src={client}
+                  alt="client"
+                  width={65}
+                  height={65}
+                  class={`profileImages ${i === 0 && "translate-x-0"} last:mr-[-60px]`}
+                  style={{
+                    transform: `translateX(${-i * 20}px)`,
+                  }}
+                />
+              ))
+            }
+          </div>
+          <div>
+            <div class="flex items-center" data-aos="fade-up-sm">
+              <h3
+                set:html={markdownify(hero.client.clients.rating)}
+                class="mr-2 text-secondary"
+              />
+              {
+                (() => {
+                  const ratingString = hero.client.clients.rating || "0";
+                  const ratingNum = parseFloat(ratingString.split('/')[0]);
+                  const starCount = Math.min(Math.max(0, Math.ceil(ratingNum)), 5);
+                  
+                  return Array.from({ length: starCount }).map((_, i) => (
+                    <FaStar className="text-yellow-400 mr-1" />
+                  ));
+                })()
+              }
+            </div>
+            <p
+              set:html={markdownify(hero.client.clients.user)}
+              class="text-lg"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-12 lg:col-5">
+        <div class="relative h-full" data-aos="fade-up-sm">
+          <ImageMod
+            src={hero.image}
+            alt="hero"
+            width={970}
+            height={654}
+            class="lg:absolute top-0 left-0 h-fit lg:min-w-max shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-xl lg:-translate-x-12"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-[80px] max-lg:pt-0 pb-0">
+  <div class="container">
+    <div class="row items-center justify-between">
+      <div class="col-12 md:col-4">
+        <p
+          set:html={markdownify(brand.title)}
+          class="max-lg:text-center max-lg:mb-7"
+          data-aos="fade-right-sm"
+        />
+      </div>
+      <div class="col-12 md:col-8">
+        <div
+          style="mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)"
+          class="swiper brand-slider"
+          data-aos="fade-left-sm"
+        >
+          <div class="swiper-wrapper">
+            {
+              brand.logos.map((item: string) => (
+                <div class="swiper-slide">
+                  <ImageMod
+                    src={item}
+                    alt="brand"
+                    width={300}
+                    height={76}
+                    class="w-auto h-[76px] object-contain grayscale opacity-30"
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { Swiper } from "swiper";
+  import "swiper/css";
+  import "swiper/css/pagination";
+  import { Autoplay } from "swiper/modules";
+
+  document.addEventListener("astro:page-load", () => {
+    new Swiper(".brand-slider", {
+      modules: [Autoplay],
+      spaceBetween: 40,
+      loop: true,
+      centeredSlides: true,
+      speed: 3000,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        425: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  });
+</script>

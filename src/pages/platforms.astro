@@ -1,0 +1,71 @@
+---
+import CustomAccordion from "@/components/CustomAccordion";
+import ImageMod from "@/components/ImageMod.astro";
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const platforms = (await getEntry(
+  "platforms",
+  "-index"
+)) as CollectionEntry<"platforms">;
+const { title, description, categories } = platforms.data;
+
+const faq = (await getEntry(
+  "faqSection",
+  "faq"
+)) as CollectionEntry<"faqSection">;
+---
+
+<Base title={title} description={description}>
+  <section class="section" data-aos="fade-up-sm">
+    <div class="container">
+      <h1
+        set:html={markdownify(title)}
+        class="text-center max-xl:h2 text-balance mb-6"
+        data-aos="fade-up-sm"
+      />
+      <p set:html={markdownify(description)} class="text-center text-balance" />
+      
+      {categories.map((category) => (
+        <div class="mt-16" data-aos="fade-up-sm">
+          <h2 class="h3 text-center mb-4">{category.name}</h2>
+          <p class="text-center mb-10">{category.description}</p>
+          
+          <div class="row g-4">
+            {category.platforms.map((platform, i) => (
+              <div
+                class="col-12 md:col-6 lg:col-4 2xl:col-3 max-h-full"
+                data-aos="fade-up-sm"
+                data-aos-delay={i * 50}
+              >
+                <div class="p-7 border rounded-lg h-full">
+                  <div class="flex flex-col md:flex-row items-center mb-6">
+                    <ImageMod
+                      src={platform.logo}
+                      alt={platform.name}
+                      width={61}
+                      height={61}
+                      class="mr-6"
+                    />
+                    <h5
+                      set:html={markdownify(platform.name)}
+                      class="text-center text-xl"
+                    />
+                  </div>
+                  <p
+                    set:html={markdownify(platform.details)}
+                    class="text-lg text-text/70"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CustomAccordion faqs={faq.data} client:load />
+</Base>
