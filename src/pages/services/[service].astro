@@ -14,7 +14,13 @@ import Review from "@/components/homepage/Review.astro";
 export async function getStaticPaths() {
   const services = await getCollection(
     "services",
-    (entry) => entry.id !== 'services/index.md' && !entry.id.startsWith('-')
+    (entry) => {
+      // More explicit filtering of index files
+      const isIndex = entry.id === 'services/index.md' || 
+                     entry.id === 'services/-index.md' ||
+                     entry.id.includes('index');
+      return !isIndex && !entry.id.startsWith('-');
+    }
   );
 
   return services.map((service) => ({
