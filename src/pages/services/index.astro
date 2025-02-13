@@ -6,7 +6,11 @@ import { getCollection, getEntry } from "astro:content";
 import ServiceCard from "@/layouts/components/services/ServiceCard.astro";
 
 // Get the services index page data
-const servicesIndex = await getEntry("services", "index");
+const servicesIndex = await getEntry("services", "-index");
+if (!servicesIndex) {
+  return Astro.redirect('/404');
+}
+
 const { title, meta_title, description, hero, services } = servicesIndex.data;
 
 // Get the CTA section
