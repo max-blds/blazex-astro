@@ -14,7 +14,7 @@ import Review from "@/components/homepage/Review.astro";
 export async function getStaticPaths() {
   const services = await getCollection(
     "services",
-    (entry) => !entry.id.endsWith('-index.md')
+    (entry) => !entry.id.endsWith('-index.md') && !entry.id.startsWith('-')
   );
 
   return services.map((service) => ({
