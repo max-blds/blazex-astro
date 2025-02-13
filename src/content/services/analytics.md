@@ -52,7 +52,7 @@ section_4:
   content: "Build predictive models to understand true customer value and optimize acquisition costs."
   icon: "users"
   image_1: "/images/services/ltv-model.png"
-  image_2: "/images/services/ltv-chart.png"
+  image_2: "/images/services/analytics-dashboard.png"
 
 section_5:
   title: "Audience Optimization"

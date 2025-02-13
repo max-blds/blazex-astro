@@ -14,16 +14,18 @@ import Review from "@/components/homepage/Review.astro";
 export async function getStaticPaths() {
   const services = await getCollection(
     "services",
-    (entry) => !entry.id.endsWith('index.md') && !entry.id.startsWith('-')
+    (entry) => entry.id !== 'services/index.md' && !entry.id.startsWith('-')
   );
 
   return services.map((service) => ({
-    params: { service: service.id.replace(/^services\//, '').replace(/\.md$/, '') },
+    params: { 
+      service: service.id.replace(/^services\//, '').replace(/\.md$/, '') 
+    },
     props: { service },
   }));
 }
 
-// Get the service from props instead of fetching again
+// Get the service from props
 const { service } = Astro.props;
 
 // Add error handling for undefined service
@@ -34,17 +36,8 @@ if (!service || !service.data) {
 const { data } = service;
 const call_to_action = await getEntry("ctaSection", "call-to-action");
 
-// Add error handling for when service is undefined
-const { service: serviceParam } = Astro.params;
-const entry = await getEntry('services', serviceParam);
-
-// Add a check to handle undefined entry
-if (!entry) {
-  return Astro.redirect('/404');
-}
-
 // Now safely access the title
-const { title } = entry.data;
+const { title } = data;
 ---
 
 <Base title={data.title} meta_title={data.meta_title} description={data.description}>
