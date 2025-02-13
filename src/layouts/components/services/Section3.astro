@@ -1,7 +1,7 @@
 ---
-import DynamicIcon from "@/helpers/DynamicIcon";
 import { markdownify } from "@/lib/utils/textConverter";
 import ImageMod from "../ImageMod.astro";
+import Icon from "@/components/Icon.astro";
 
 const { section_3 } = Astro.props;
 ---
@@ -14,7 +14,7 @@ const { section_3 } = Astro.props;
       set:html={markdownify(section_3.title)}
     />
     <div class="bg-accent rounded-full p-3">
-      <DynamicIcon icon={section_3.icon} className="text-xl" />
+      <Icon name="workflow" class="w-6 h-6 text-primary" />
     </div>
   </div>
 

@@ -1,0 +1,86 @@
+---
+import Base from "@/layouts/Base.astro";
+import { getCollection, getEntry } from "astro:content";
+import Section1 from "@/layouts/components/services/Section1.astro";
+import Section2 from "@/layouts/components/services/Section2.astro";
+import Section3 from "@/layouts/components/services/Section3.astro";
+import Section4 from "@/layouts/components/services/Section4.astro";
+import Section5 from "@/layouts/components/services/Section5.astro";
+import CallToAction from "@/partials/CallToAction.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import Review from "@/components/homepage/Review.astro";
+
+// Get all service pages
+export async function getStaticPaths() {
+  const services = await getCollection(
+    "services",
+    (entry) => !entry.id.endsWith('-index.md')
+  );
+
+  return services.map((service) => ({
+    params: { service: service.id.replace(/^services\//, '').replace(/\.md$/, '') },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { data } = service;
+const call_to_action = await getEntry("ctaSection", "call-to-action");
+---
+
+<Base title={data.title} meta_title={data.meta_title} description={data.description}>
+  <section class="section pb-0" data-aos="fade-up-sm">
+    <div class="container">
+      <h1
+        class="pb-4 max-xl:h2 text-center"
+        data-aos="fade-up-sm"
+        set:html={markdownify(data.hero.title)}
+      />
+      <p
+        class="pb-8 text-balance text-center text-text/70"
+        data-aos="fade-up-sm"
+        set:html={markdownify(data.hero.content)}
+      />
+    </div>
+  </section>
+  <Section1 section_1={data.section_1} />
+  <Section2 section_2={data.section_2} />
+
+  <section class="section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 lg:col-5">
+          <Section3 section_3={data.section_3} />
+        </div>
+        <div class="col-12 lg:col-7">
+          <Section4 section_4={data.section_4} />
+        </div>
+        <div class="col-12">
+          <Section5 section_5={data.section_5} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row max-lg:justify-center items-end mb-16">
+        <div class="col-12 lg:col-7">
+          <h2
+            set:html={markdownify(data.review.title)}
+            class="max-xl:h3 max-lg:text-center"
+          />
+        </div>
+        <div class="col-12 lg:col-5">
+          <p
+            set:html={markdownify(data.review.content)}
+            class="text-xl text-text/70 max-lg:text-center"
+          />
+        </div>
+      </div>
+      <Review />
+    </div>
+  </section>
+
+  <CallToAction cta={call_to_action.data} />
+</Base>

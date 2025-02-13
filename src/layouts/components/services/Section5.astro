@@ -1,7 +1,8 @@
 ---
-import DynamicIcon from "@/helpers/DynamicIcon";
 import { markdownify } from "@/lib/utils/textConverter";
 import ImageMod from "../ImageMod.astro";
+import DebugIcon from "@/components/DebugIcon.astro";
+import Icon from "@/components/Icon.astro";
 
 const { section_5 } = Astro.props;
 ---
@@ -15,7 +16,7 @@ const { section_5 } = Astro.props;
     data-aos="fade-right-sm"
   >
     <div class="bg-accent rounded-full p-3 w-fit">
-      <DynamicIcon icon={section_5.icon} className="text-xl" />
+      <Icon name="code" class="w-6 h-6" />
     </div>
     <h4
       class="max-xl:h5 max-lg:mb-6"

@@ -1,8 +1,8 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import { Icon } from "astro-icon/components";
 import { IoMdCheckmark } from "react-icons/io";
 import ImageMod from "../ImageMod.astro";
+import Icon from "@/components/Icon.astro";
 
 const { feature } = Astro.props;
 ---
@@ -103,7 +103,7 @@ const { feature } = Astro.props;
           <Icon name="quote" class="mb-10 text-5xl" data-aos="fade-up-sm" />
           <p
             set:html={markdownify(feature.action.review.comment)}
-            class="before:content-['“'] after:content-['”'] mb-6 font-medium max-lg:text-balance"
+            class="before:content-['"'] after:content-['"'] mb-6 font-medium max-lg:text-balance"
             data-aos="fade-up-sm"
             data-aos-delay="100"
           />

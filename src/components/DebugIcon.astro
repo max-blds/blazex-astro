@@ -1,0 +1,12 @@
+---
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+---
+
+<div class={`debug-icon ${className}`} style="border: 1px dashed red; padding: 4px; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">
+  Missing Icon: {name}
+</div> 

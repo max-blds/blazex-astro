@@ -1,7 +1,7 @@
 ---
 hero:
-  title: "Scale Your Campaigns <br> with AI-Powered <br> Media Buying."
-  content: "We manage content arbitrage and RSOC campaigns with our proprietary Ad Nexus platform and AI tools to deliver exceptional ROAS."
+  title: "Scale Your Business <br> with AI-Powered <br> Solutions."
+  content: "From performance marketing to rapid development and data analytics, we help businesses grow with modern tools and expertise."
   image: "/images/homepage/home-hero.png"
   button_1:
     enable: true
@@ -9,7 +9,7 @@ hero:
     link: "/services"
   button_2:
     enable: true
-    label: "Join Our Media Buyers"
+    label: "Get Started"
     link: "/contact"
   client:
     images:
@@ -27,20 +27,20 @@ brand:
     - "/images/homepage/brands/meta.png"
     - "/images/homepage/brands/google-ads.png"
     - "/images/homepage/brands/taboola.png"
-    - "/images/homepage/brands/x.png"
+    - "/images/homepage/brands/retool.png"
+    - "/images/homepage/brands/make.png"
     - "/images/homepage/brands/airtable.png"
-    - "/images/homepage/brands/funnel.png"
 
 about:
- title: "Performance Marketing <br> Powered by Humans... and AI"
- content_1: "We combine deep marketing expertise with proprietary AI tools to deliver exceptional results."
- content_2: "From creative generation to campaign optimization, our technology streamlines every aspect of performance marketing."
+ title: "Modern Solutions for <br> Modern Businesses"
+ content_1: "We combine deep expertise with cutting-edge tools to deliver results across marketing, development, and analytics."
+ content_2: "Whether you need to scale campaigns, build MVPs fast, or understand customer value, we have the solutions."
  image:
    image: "/images/homepage/about.png"
    point:
-     - "AI-powered campaign optimization"
-     - "Proprietary Ad Nexus platform"
-     - "Cross-platform expertise"
+     - "AI-powered marketing"
+     - "Rapid development"
+     - "Data-driven insights"
  achievements:
    - key: 2
      suffix: "X"
@@ -48,35 +48,35 @@ about:
    - key: 20
      suffix: "+"
      value: "Years Experience"
-   - key: 4
+   - key: 3
      suffix: ""
-     value: "Major Platforms"
+     value: "Core Service Areas"
 
 step:
- title: "Simple Process, Powerful Results"
+ title: "Solutions for Every Need"
  steps:
-   - title: "Initial Assessment"
-     description: "We analyze your current campaigns and identify optimization opportunities."
-   - title: "Strategy Development"
-     description: "Custom strategy combining our AI tools and expert media buying."
-   - title: "Scale & Optimize"
-     description: "Continuous optimization to maintain performance while scaling spend."
- start: "Start scaling your campaigns while maintaining ROAS targets."
+   - title: "Marketing & Media Buying"
+     description: "Scale your campaigns with AI-powered optimization across major platforms."
+   - title: "Rapid Development"
+     description: "Build and launch MVPs fast with modern no-code and low-code tools."
+   - title: "Data Analytics"
+     description: "Understand customer value and optimize with data-driven insights."
+ start: "Start growing your business with our comprehensive solutions."
  button:
    enable: true
-   label: "Case Studies"
-   link: "/case-studies"
+   label: "Our Services"
+   link: "/services"
 
 feature:
- title: "AI-Powered Campaign Management"
+ title: "Technology-First Approach"
  image: "/images/homepage/feature/adnexus.png"
- content: "Our Ad Nexus platform combines AI optimization with expert media buying to deliver exceptional results."
+ content: "Our solutions combine modern platforms with expert implementation to deliver exceptional results."
  points:
-   - "Automated creative testing and optimization"
-   - "Cross-platform campaign management"
-   - "Real-time performance tracking"
+   - "AI-powered marketing optimization"
+   - "Rapid prototype development"
+   - "Advanced analytics and LTV modeling"
  action:
-   title: "Make data-driven decisions at scale."
+   title: "Solutions that scale with your business."
    review:
      user: "Quiz Griz"
      designation: "Display Content Marketing"
@@ -86,7 +86,7 @@ feature:
    image_3: "/images/homepage/feature/reporting.png"
 
 integration:
- title: "Full-Service Campaign Management Across Major Platforms"
+ title: "Full-Service Solutions Across Leading Platforms"
  image: "/images/homepage/platforms.png"
  button:
    enable: true
@@ -98,13 +98,13 @@ review:
  badge: "PROVEN RESULTS"
 
 cta:
- title: "Ready to scale your campaigns while maintaining ROAS? Let's talk about your goals."
+ title: "Ready to accelerate your growth? Let's talk about your goals."
  button_1:
    enable: true
    label: "Contact Us"
    link: "/contact"
  button_2:
    enable: true
-   label: "Join Our Media Buyers"
-   link: "/contact"
+   label: "Our Services"
+   link: "/services"
 ---

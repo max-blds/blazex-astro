@@ -6,7 +6,22 @@
     },
     {
       "name": "Services",
-      "url": "/services"
+      "url": "/services",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Marketing",
+          "url": "/services/marketing"
+        },
+        {
+          "name": "Data Analytics",
+          "url": "/services/analytics"
+        },
+        {
+          "name": "Rapid Development",
+          "url": "/services/development"
+        }
+      ]
     },
     {
       "name": "Case Studies",

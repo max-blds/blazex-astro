@@ -8,7 +8,6 @@ import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import sharp from "sharp";
 import config from "./src/config/config.json";
-
 import icon from "astro-icon";
 
 // https://astro.build/config
@@ -39,7 +38,21 @@ export default defineConfig({
       ],
     }),
     mdx(),
-    icon(),
+    icon({
+      include: {
+        'mdi': ['*'],
+        'local': ['*']
+      },
+      svgConfig: {
+        class: 'icon'
+      },
+      custom: {
+        'local': {
+          svg: './src/icons/*.svg',
+          elementClass: 'icon'
+        }
+      }
+    })
   ],
   markdown: {
     remarkPlugins: [
@@ -57,4 +70,11 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
+  vite: {
+    resolve: {
+      alias: {
+        '@icons': '/src/icons'
+      }
+    }
+  }
 });

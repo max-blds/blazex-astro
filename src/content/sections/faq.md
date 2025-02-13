@@ -7,10 +7,10 @@ faqs:
     answer: "We operate on a base retainer plus profit share model, not a percentage of ad spend. This aligns our interests with yours - we succeed when you succeed. The specific structure depends on your monthly ad spend and campaign goals."
 
   - question: "What platforms do you work with?"
-    answer: "We specialize in Meta, Facebook, Taboola, and Twitter. Our Ad Nexus platform helps manage and optimize campaigns across all these platforms simultaneously, making it efficient to scale across multiple channels."
+    answer: "We specialize in Meta, Google Ads, Taboola, and Twitter. Our Ad Nexus platform helps manage and optimize campaigns across all these platforms simultaneously, making it efficient to scale across multiple channels for both ecommerce brands and digital publishers."
 
   - question: "What's your typical ROAS target?"
-    answer: "For RSOC (Display to Search) campaigns, our clients typically aim for 20-30% ROAS. Content arbitrage campaigns, particularly in entertainment and gaming verticals, can see varying returns based on the specific content and audience."
+    answer: "For RSOC (Display to Search) campaigns, our clients typically aim for 20-30% ROAS. Digital publishers and ecommerce brands, particularly in entertainment, gaming, and retail verticals, can see similar returns based on their specific content and audience."
 
   - question: "What makes your AI tools different?"
     answer: "Our proprietary Ad Nexus platform combines machine learning optimization with expert media buying knowledge. It handles creative testing, campaign management, and performance tracking, allowing us to scale campaigns efficiently while maintaining ROAS targets."

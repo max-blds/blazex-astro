@@ -1,0 +1,59 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import Button from "@/shortcodes/Button";
+import ImageMod from "../ImageMod.astro";
+import DebugIcon from "@/components/DebugIcon.astro";
+import Icon from "@/components/Icon.astro";
+
+const { service, i } = Astro.props;
+---
+
+<div class="col-12" data-aos="fade-up-sm" data-aos-delay={`${i * 100}`}>
+  <div
+    class={`row my-6 md:my-14 rounded-md overflow-hidden ${i === 0 && "mt-0"}  ${i === 0 ? "bg-tertiary" : i === 1 ? "bg-text text-light" : "bg-accent"}`}
+  >
+    <div class="col-12 lg:col-7 p-0 min-h-full order-2 lg:order-1">
+      <div class="flex flex-col justify-between h-full p-10 md:p-20">
+        <div>
+          <p class="text-lg font-semibold mb-4">{service.badge}</p>
+          <a href={service.link} class="text-6xl font-bold">
+            {service.title}
+          </a>
+          <p class="mt-4">{service.description}</p>
+        </div>
+        <div>
+          <hr
+            class={`border-t mt-24 mb-9 ${i === 1 ? "border-border" : "border-dark"}`}
+          />
+          <ul class="mb-12">
+            {
+              service.highlights.map((highlight: string) => (
+                <li class="mb-2 flex items-center">
+                  <Icon name="tick" class="text-primary mr-2" />
+                  {highlight}
+                </li>
+              ))
+            }
+          </ul>
+
+          <Button
+            link={service.link}
+            label="Learn More"
+            data-aos="fade-up-sm"
+            data-aos-delay="300"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 lg:col-5 p-5 pb-0 md:p-0 order-1 lg:order-2">
+      <ImageMod
+        src={service.image}
+        alt={service.title}
+        width={583}
+        height={700}
+        format="webp"
+        class="object-cover size-full rounded-md md:rounded-none"
+      />
+    </div>
+  </div>
+</div> 

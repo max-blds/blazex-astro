@@ -521,6 +521,17 @@ const servicesCollection = defineCollection({
       title: z.string(),
       content: z.string(),
     }),
+    services: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string(),
+        image: z.string(),
+        link: z.string(),
+        badge: z.string(),
+        highlights: z.array(z.string()),
+      })
+    ).optional(),
     section_1: z.object({
       title: z.string(),
       content: z.string(),
@@ -532,7 +543,7 @@ const servicesCollection = defineCollection({
         label: z.string(),
         link: z.string(),
       }),
-    }),
+    }).optional(),
     section_2: z.object({
       badge: z.string(),
       title: z.string(),
@@ -545,30 +556,30 @@ const servicesCollection = defineCollection({
         label: z.string(),
         link: z.string(),
       }),
-    }),
+    }).optional(),
     section_3: z.object({
       title: z.string(),
       icon: z.string(),
       image: z.string(),
       content: z.string(),
-    }),
+    }).optional(),
     section_4: z.object({
       title: z.string(),
       icon: z.string(),
       image_1: z.string(),
-      image_2: z.string().optional(),
+      image_2: z.string(),
       content: z.string(),
-    }),
+    }).optional(),
     section_5: z.object({
       title: z.string(),
       icon: z.string(),
       image: z.string(),
       content: z.string(),
-    }),
+    }).optional(),
     review: z.object({
       title: z.string(),
       content: z.string(),
-    }),
+    }).optional(),
   }),
 });
 
