@@ -34,6 +34,14 @@ input#nav-toggle:checked ~ #nav-menu {
 .nav-link {
   @apply text-dark/80 hover:text-secondary rounded text-lg block p-3 font-medium transition lg:px-2 lg:py-3;
 
+  a {
+    @apply text-dark/80 hover:text-secondary transition;
+    
+    &.active {
+      @apply text-secondary;
+    }
+  }
+
   &.active {
     @apply text-secondary;
   }

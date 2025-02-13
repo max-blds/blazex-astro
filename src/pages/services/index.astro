@@ -2,7 +2,7 @@
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import ServiceCard from "@/layouts/components/services/ServiceCard.astro";
 
 // Get the services index page data

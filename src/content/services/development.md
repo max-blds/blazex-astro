@@ -1,8 +1,8 @@
 ---
 type: "service"
-title: "Rapid Prototype Development"
-meta_title: "Rapid Prototype Development | Conversion Collective"
-description: "Launch your MVP faster with our rapid development services using modern no-code and low-code platforms."
+title: "Rapid Development"
+meta_title: "Rapid Development | Conversion Collective"
+description: "Build and launch MVPs faster with our rapid development services."
 
 hero:
   title: "Build Fast, Launch Faster"

@@ -1,7 +1,8 @@
 ---
+type: "service"
 title: "Marketing & Media Buying"
-meta_title: "Marketing & Media Buying Services | Conversion Collective"
-description: "Scale your digital marketing campaigns with AI-powered media buying and campaign optimization across major platforms."
+meta_title: "Marketing & Media Buying | Conversion Collective"
+description: "Scale your campaigns with AI-powered optimization across major platforms."
 
 hero:
   title: "Performance Marketing at Scale"

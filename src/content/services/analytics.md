@@ -1,8 +1,8 @@
 ---
 type: "service"
-title: "Data Analysis & LTV Modeling"
-meta_title: "Data Analysis & LTV Modeling | Conversion Collective"
-description: "Understand your true customer value and optimize your marketing with data-driven insights."
+title: "Data Analytics"
+meta_title: "Data Analytics | Conversion Collective"
+description: "Understand customer value and optimize with data-driven insights."
 
 hero:
   title: "Turn Data Into Growth"

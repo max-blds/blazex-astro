@@ -23,6 +23,7 @@ export async function getStaticPaths() {
   }));
 }
 
+// Get the service from props instead of fetching again
 const { service } = Astro.props;
 const { data } = service;
 const call_to_action = await getEntry("ctaSection", "call-to-action");
