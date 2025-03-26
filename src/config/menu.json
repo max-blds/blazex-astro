@@ -34,6 +34,10 @@
     {
       "name": "Contact",
       "url": "/contact"
+    },
+    {
+      "name": "LaunchBox",
+      "url": "https://launchbox-new.conversioncollective.io/"
     }
   ],
   "footer": [
@@ -51,6 +55,10 @@
         {
           "name": "Platforms",
           "url": "/platforms"
+        },
+        {
+          "name": "LaunchBox",
+          "url": "https://launchbox-new.conversioncollective.io/"
         }
       ]
     },
