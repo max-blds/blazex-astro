@@ -12,6 +12,9 @@
     "preview": "astro preview",
     "format": "prettier -w ./src"
   },
+  "engines": {
+    "node": ">=20.10.0"
+  },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "4.0.5",

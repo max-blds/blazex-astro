@@ -1,0 +1,4 @@
+name = "blazex-astro"
+compatibility_date = "2024-12-01"
+# Using Node.js runtime features
+compatibility_flags = ["nodejs_compat"]
