@@ -1,3 +1,4 @@
+import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -6,17 +7,20 @@ import AutoImport from "astro-auto-import";
 import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
-import sharp from "sharp";
 import config from "./src/config/config.json";
 import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: cloudflare({
+    experimentalSessions: false,
+  }),
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
+  output: "server",
   image: {
-    service: sharp(),
+    serviceEntryPoint: "@astrojs/cloudflare/image-service",
   },
   integrations: [
     react(),
