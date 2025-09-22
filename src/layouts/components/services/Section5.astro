@@ -1,7 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
 import ImageMod from "../ImageMod.astro";
-import DebugIcon from "@/components/DebugIcon.astro";
 import Icon from "@/components/Icon.astro";
 
 const { section_5 } = Astro.props;
@@ -24,6 +23,16 @@ const { section_5 } = Astro.props;
       set:html={markdownify(section_5.title)}
     />
     <p set:html={markdownify(section_5.content)} class="text-balance text-lg" />
+    {section_5.highlights && (
+      <div class="mt-5">
+        {section_5.highlights.map((item: string) => (
+          <div class="flex items-center mb-3 last:mb-0">
+            <Icon name="tick" class="text-tertiary mr-3 text-lg" />
+            <p set:html={markdownify(item)} class="text-xl" />
+          </div>
+        ))}
+      </div>
+    )}
   </div>
   <div class="w-full lg:w-1/2" data-aos="fade-left-sm">
     <div>

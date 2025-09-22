@@ -26,6 +26,7 @@
 
   "params": {
     "contact_form_action": "#",
+    "tally_free_500_url": "https://tally.so/embed/wvkBKd?hideTitle=1&transparentBackground=1&dynamicHeight=1",
     "footer_text": "Conversion Collective manages all aspects of campaign management from creative to optimization, helping clients achieve their ROAS goals.",
     "copyright": "Copyright © 2024 All Rights Reserved by Conversion Collective"
   },

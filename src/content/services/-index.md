@@ -29,15 +29,17 @@ services:
       - "Modern tech stack"
       - "Scalable solutions"
 
-  - title: "Data Analysis & LTV Modeling"
-    description: "Understand your true customer value and optimize your marketing with data-driven insights and predictive modeling."
-    icon: "/src/icons/chart-mixed"
-    image: "/images/services/analytics.png"
-    link: "/services/analytics"
-    badge: "ANALYTICS"
+  - title: "Creative Production"
+    description: "High-volume static ad creative in multiple styles and formats, customized to your brand and built for rapid testing and performance."
+    icon: "/src/icons/spark"
+    image: "/images/services/creative1.png"
+    link: "/services/creative"
+    badge: "CREATIVE"
     highlights:
-      - "Customer LTV modeling"
-      - "Revenue tracking setup"
-      - "Audience optimization"
+      - "High-volume production"
+      - "Brand-aligned copywriting"
+      - "Platform-ready sizes"
+      - "AI-UGC video"
+      - "AI video ad production"
 ---
            

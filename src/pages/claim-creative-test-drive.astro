@@ -1,0 +1,40 @@
+---
+import Base from "@/layouts/Base.astro";
+import config from "@/config/config.json";
+---
+
+<Base title={"Try it Free: 500 Creatives"} description={"Get 500 brand-aligned static ad creatives to trial our production workflow."}>
+  <section class="section">
+    <div class="container">
+      <div class="row gy-6">
+        <div class="col-12" data-aos="fade-up-sm">
+          <h1 class="text-center max-xl:h2 mb-4">Try it Free: 500 Creatives</h1>
+          <p class="text-center text-balance mb-10">We’ll produce 500 static ad variations for your brand—multiple styles and formats, with copy aligned to your guidelines—so you can see our system in action.</p>
+        </div>
+
+        <div class="col-12 md:col-10 mx-auto" data-aos="fade-up-sm">
+          <div class="p-0 overflow-hidden rounded-2xl shadow-lg">
+            <iframe
+              data-tally-src={(config.params.tally_free_500_url || "https://tally.so/embed/wvkBKd?hideTitle=1&transparentBackground=1&dynamicHeight=1")}
+              loading="lazy"
+              width="100%"
+              height="800"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Claim the 500 Creative Test Drive"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+<script async src="https://tally.so/widgets/embed.js"></script>
+<style>
+  iframe[data-tally-src] { min-height: 800px; }
+  @media (max-width: 768px) { iframe[data-tally-src] { min-height: 1000px; } }
+  @media (min-width: 1280px) { iframe[data-tally-src] { min-height: 900px; } }
+</style>
+
+

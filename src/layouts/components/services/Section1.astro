@@ -8,7 +8,7 @@ import ImageMod from "../ImageMod.astro";
 const { section_1 } = Astro.props;
 ---
 
-<section class="section pt-14" data-aos="fade-up-sm">
+<section class="section pt-6 md:pt-10" data-aos="fade-up-sm">
   <div class="container">
     <div class="row max-lg:gy-5 items-stretch">
       <div class="col-12 lg:col-6" data-aos="fade-right-sm">
@@ -21,15 +21,15 @@ const { section_1 } = Astro.props;
             class="h-full mx-auto"
           />
           <div
-            class="absolute bottom-10 left-8 md:left-24 lg:left-10 flex flex-col gap-2"
+            class="absolute bottom-6 left-8 md:left-24 lg:left-10 flex flex-col gap-1.5"
           >
             {
               section_1.highlights.map((item: string) => (
-                <div class="flex items-center mb-1 last:mb-0 bg-light w-fit rounded-full p-3 py-1">
-                  <TiTick className="text-light bg-tertiary rounded-full mr-2 text-lg max-lg:text-xs" />
+                <div class="flex items-center mb-1 last:mb-0 bg-light w-fit rounded-full px-3 py-1">
+                  <TiTick className="text-light bg-tertiary rounded-full mr-2 text-base max-lg:text-[10px]" />
                   <p
                     set:html={markdownify(item)}
-                    class="text-lg max-lg:text-xs"
+                    class="text-base max-lg:text-xs"
                   />
                 </div>
               ))
@@ -38,7 +38,7 @@ const { section_1 } = Astro.props;
         </div>
       </div>
       <div class="col-12 lg:col-6" data-aos="fade-left-sm">
-        <div class="flex flex-col justify-between h-full">
+        <div class="flex flex-col gap-4 lg:gap-6">
           <div>
             <h2
               set:html={markdownify(section_1.title)}
@@ -46,16 +46,16 @@ const { section_1 } = Astro.props;
             />
             <p
               set:html={markdownify(section_1.content)}
-              class="mb-4 max-lg:text-center text-text/70"
+              class="mb-2 md:mb-3 max-lg:text-center text-text/70"
             />
           </div>
 
           <div>
             {
               section_1.features.map((item: string) => (
-                <div class="flex items-center mb-4 last:mb-0 bg-light w-fit rounded-full p-3 py-1">
-                  <Icon name="tick" class="text-tertiary mr-3 text-lg" />
-                  <p set:html={markdownify(item)} class="text-xl" />
+                <div class="flex items-center mb-3 last:mb-0 bg-light w-fit rounded-full px-3 py-1">
+                  <Icon name="tick" class="text-tertiary mr-3 text-base" />
+                  <p set:html={markdownify(item)} class="text-lg" />
                 </div>
               ))
             }
@@ -64,7 +64,7 @@ const { section_1 } = Astro.props;
               <Button
                 label={section_1.button.label}
                 link={section_1.button.link}
-                className="mt-6 lg:mt-10"
+                className="mt-4 lg:mt-6"
               />
             )}
           </div>

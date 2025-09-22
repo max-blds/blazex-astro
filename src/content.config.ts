@@ -575,6 +575,7 @@ const servicesCollection = defineCollection({
       icon: z.string(),
       image: z.string(),
       content: z.string(),
+      highlights: z.array(z.string()).optional(),
     }).optional(),
     review: z.object({
       title: z.string(),

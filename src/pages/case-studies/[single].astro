@@ -1,5 +1,5 @@
 ---
-import CaseCard from "@/components/case/CaseCard.astro";
+import CaseCard from "@/layouts/components/case/CaseCard.astro";
 import Base from "@/layouts/Base.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -65,5 +65,5 @@ const call_to_action = await getEntry("ctaSection", "call-to-action");
     </div>
   </section>
 
-  <CallToAction cta={call_to_action.data} />
+  {call_to_action?.data && <CallToAction cta={call_to_action.data} />}
 </Base>
