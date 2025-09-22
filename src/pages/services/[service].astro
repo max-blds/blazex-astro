@@ -1,6 +1,6 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
 import Section1 from "@/layouts/components/services/Section1.astro";
 import Section2 from "@/layouts/components/services/Section2.astro";
 import Section3 from "@/layouts/components/services/Section3.astro";
@@ -12,35 +12,12 @@ import Review from "@/layouts/components/homepage/Review.astro";
 import Button from "@/shortcodes/Button";
 
 // Get all service pages
-export async function getStaticPaths() {
-  const services = await getCollection(
-    "services",
-    (entry) => {
-      // More explicit filtering of index files
-      const isIndex = entry.id === 'services/index.md' || 
-                     entry.id === 'services/-index.md' ||
-                     entry.id.includes('index');
-      return !isIndex && !entry.id.startsWith('-');
-    }
-  );
-
-  return services.map((service) => ({
-    params: { 
-      service: service.id.replace(/^services\//, '').replace(/\.md$/, '') 
-    },
-    props: { service },
-  }));
-}
-
-// Get the service from props
-const { service } = Astro.props;
-
-// Add error handling for undefined service
-if (!service || !service.data) {
+const { service } = Astro.params;
+const serviceEntry = service ? await getEntry("services", service as string) : null;
+if (!serviceEntry || !serviceEntry.data) {
   return Astro.redirect('/404');
 }
-
-const { data } = service;
+const { data } = serviceEntry;
 const call_to_action = await getEntry("ctaSection", "call-to-action");
 
 // Now safely access the title

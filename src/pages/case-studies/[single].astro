@@ -1,7 +1,6 @@
 ---
 import CaseCard from "@/layouts/components/case/CaseCard.astro";
 import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -19,7 +18,11 @@ export async function getStaticPaths() {
     }));
 }
 
-const { entry } = Astro.props;
+const { single } = Astro.params;
+const entry = single ? await getEntry('case-studies', single as string) : null;
+if (!entry) {
+  return Astro.redirect('/404');
+}
 const { Content } = await entry.render();
 
 // Get next case study for "Check Next Story" section
