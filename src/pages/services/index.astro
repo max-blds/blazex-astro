@@ -4,6 +4,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
 import { getCollection, getEntry } from "astro:content";
 import ServiceCard from "@/layouts/components/services/ServiceCard.astro";
+export const prerender = true;
 
 // Get the services index page data
 const servicesIndex = await getEntry("services", "-index");
@@ -37,9 +38,9 @@ const call_to_action = await getEntry("ctaSection", "call-to-action");
   <!-- Services List -->
   <section class="section">
     <div class="container">
-      {services.map((service, i) => <ServiceCard service={service} i={i} />)}
+      {services && services.map((service, i) => <ServiceCard service={service} i={i} />)}
     </div>
   </section>
 
-  <CallToAction cta={call_to_action.data} />
+  {call_to_action?.data && <CallToAction cta={call_to_action.data} />}
 </Base>
