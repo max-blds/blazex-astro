@@ -1,19 +1,20 @@
 ---
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
 import { Icon } from "astro-icon/components";
-import { getEntry, type CollectionEntry } from "astro:content";
 
 const { contact_form_action }: { contact_form_action: string } = config.params;
-const demo = (await getEntry("demo", "-index")) as CollectionEntry<"demo">;
-const { title, description, meta_title, hero, feature } = demo.data;
-
-const cta = (await getEntry("ctaSection", "call-to-action")) as CollectionEntry<"ctaSection">;
+const demoIndex = await getListPage("demo", "-index");
+if (demoIndex.data.draft) {
+  return Astro.redirect("/404");
+}
+const { hero, feature } = demoIndex.data;
 ---
 
-<Base title={title} meta_title={meta_title} description={description}>
+<Base {...demoIndex.data}>
   <section class="section" data-aos="fade-up-sm">
     <div class="container">
       <div data-aos="fade-up-sm" class="mb-16">
@@ -117,5 +118,5 @@ const cta = (await getEntry("ctaSection", "call-to-action")) as CollectionEntry<
       </div>
     </div>
   </section>
-  <CallToAction cta={cta.data} />
+  <CallToAction />
 </Base>
