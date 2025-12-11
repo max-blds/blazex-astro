@@ -1,21 +1,21 @@
 ---
-import Brand from "@/layouts/components/Brand.astro";
-import Review from "@/layouts/components/homepage/Review.astro";
-import Plans from "@/layouts/components/pricing/Plans";
+import Brand from "@/components/Brand.astro";
+import Review from "@/components/homepage/Review.astro";
+import Plans from "@/components/pricing/Plans";
 import Base from "@/layouts/Base.astro";
 import Compare from "@/layouts/components/pricing/Compare.astro";
+import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
-import { getEntry, type CollectionEntry } from "astro:content";
 
-const pricing = (await getEntry("pricing", "-index")) as CollectionEntry<"pricing">;
-const { title, meta_title, description, hero, plans, compare, review } =
-  pricing.data;
-
-const cta = (await getEntry("ctaSection", "call-to-action")) as CollectionEntry<"ctaSection">;
+const pricingIndex = await getListPage("pricing", "-index");
+if (pricingIndex.data.draft) {
+  return Astro.redirect("/404");
+}
+const { hero, plans, compare, review } = pricingIndex.data;
 ---
 
-<Base title={title} meta_title={meta_title} description={description} image="">
+<Base {...pricingIndex.data}>
   <section class="section pb-0" data-aos="fade-up-sm" data-aos-delay="100">
     <div class="container">
       <h1
@@ -33,7 +33,7 @@ const cta = (await getEntry("ctaSection", "call-to-action")) as CollectionEntry<
 
   <section class="section pt-0" data-aos="fade-up-sm" data-aos-delay="300">
     <div class="container">
-      <hr class="w-full" />
+      <hr class="w-full border-border" />
     </div>
   </section>
 
@@ -65,5 +65,5 @@ const cta = (await getEntry("ctaSection", "call-to-action")) as CollectionEntry<
     </div>
   </section>
 
-  <CallToAction cta={cta.data} />
+  <CallToAction />
 </Base>
