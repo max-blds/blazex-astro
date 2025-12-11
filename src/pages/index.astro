@@ -1,21 +1,17 @@
 ---
-import About from "@/layouts/components/homepage/About.astro";
-import Blog from "@/layouts/components/homepage/Blog.astro";
-import Feature from "@/layouts/components/homepage/Feature.astro";
-import HomeCta from "@/layouts/components/homepage/HomeCta.astro";
-import Integration from "@/layouts/components/homepage/Integration.astro";
-import Step from "@/layouts/components/homepage/Step.astro";
+import About from "@/components/homepage/About.astro";
+import Blog from "@/components/homepage/Blog.astro";
+import Feature from "@/components/homepage/Feature.astro";
+import HomeCta from "@/components/homepage/HomeCta.astro";
+import Integration from "@/components/homepage/Integration.astro";
+import Step from "@/components/homepage/Step.astro";
 import Base from "@/layouts/Base.astro";
 import Hero from "@/layouts/components/homepage/Hero.astro";
 import Review from "@/layouts/components/homepage/Review.astro";
+import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
 
-const homepage = (await getEntry(
-  "homepage",
-  "-index"
-)) as CollectionEntry<"homepage">;
+const homepage = await getListPage("homepage", "-index");
 const { hero, brand, about, step, feature, integration, review, cta } =
   homepage.data;
 ---
@@ -42,6 +38,6 @@ const { hero, brand, about, step, feature, integration, review, cta } =
       <Review />
     </div>
   </section>
-  <!-- <Blog /> -->
+  <Blog />
   <HomeCta cta={cta} />
 </Base>
