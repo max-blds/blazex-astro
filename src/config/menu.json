@@ -1,6 +1,35 @@
 {
   "main": [
     {
+      "name": "Services",
+      "url": "/services",
+      "children": [
+        {
+          "name": "Marketing",
+          "url": "/services/marketing"
+        },
+        {
+          "name": "Creative",
+          "url": "/services/creative"
+        },
+        {
+          "name": "Rapid Development",
+          "url": "/services/development"
+        }
+      ],
+      "hasChildren": true
+    },
+    {
+      "name": "Case Studies",
+      "url": "/case-studies",
+      "children": []
+    },
+    {
+      "name": "Platforms",
+      "url": "/platforms",
+      "children": []
+    },
+    {
       "name": "About",
       "url": "/about"
     },
@@ -9,15 +38,9 @@
       "url": "/contact"
     },
     {
-      "name": "Services",
-      "url": "/services",
-      "children": [
-        {
-          "name": "",
-          "url": ""
-        }
-      ],
-      "hasChildren": true
+      "name": "LaunchBox",
+      "url": "https://launchbox.conversioncollective.io/",
+      "children": []
     }
   ],
   "footer": [
@@ -25,16 +48,16 @@
       "title": "Solutions",
       "children": [
         {
-          "name": "Freelancer",
-          "url": "/contact"
+          "name": "Services",
+          "url": "/services"
         },
         {
-          "name": "Data Analytics",
-          "url": "/contact"
+          "name": "Case Studies",
+          "url": "/case-studies"
         },
         {
-          "name": "Small Business",
-          "url": "/contact"
+          "name": "LaunchBox",
+          "url": "https://launchbox.conversioncollective.io/d"
         }
       ]
     },
@@ -46,7 +69,7 @@
           "url": "/about"
         },
         {
-          "name": "Career",
+          "name": "Careers",
           "url": "/contact"
         },
         {
@@ -56,38 +79,18 @@
       ]
     },
     {
-      "title": "Resource",
+      "title": "Legal",
       "children": [
         {
-          "name": "Customers",
-          "url": "/contact"
+          "name": "Terms",
+          "url": "/terms"
         },
         {
-          "name": "Stategic Finance",
-          "url": "/contact"
-        },
-        {
-          "name": "Ebooks & Guides",
-          "url": "/contact"
-        }
-      ]
-    },
-    {
-      "title": "Features",
-      "children": [
-        {
-          "name": "Freelancer",
-          "url": "/contact"
-        },
-        {
-          "name": "Data Analytics",
-          "url": "/contact"
-        },
-        {
-          "name": "Small Business",
-          "url": "/contact"
+          "name": "Privacy",
+          "url": "/privacy"
         }
       ]
     }
-  ]
+  ],
+  "draft": false
 }
