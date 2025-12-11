@@ -1,16 +1,15 @@
 {
   "site": {
-    "title": "BlazeX - SaaS & Startup Framer Template",
-    "base_url": "https://blazex-astro.vercel.app/",
+    "title": "Conversion Collective - Performance Marketing Agency",
+    "base_url": "https://conversioncollective.io",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
+    "favicon": "media/public/images/favicon (2).png",
+    "logo": "media/public/images/Conversion Collective Logos (3).png",
     "logo_width": "119",
     "logo_height": "40",
-    "logo_text": "blazex"
+    "logo_text": "Conversion Collective"
   },
-
   "settings": {
     "sticky_header": true,
     "default_theme": "system",
@@ -18,32 +17,27 @@
     "summary_length": 200,
     "blog_folder": "blog"
   },
-
   "subscription": {
     "enable": true,
     "form_action": "#"
   },
-
   "params": {
     "contact_form_action": "#",
     "footer_text": "Themefisher gives you the blocks <br> needed to create a truly professional <br> website for your SaaS.",
     "copyright": "Copyright © 2025 All Rights Reserved by [Themefisher](https://themefisher.com/)"
   },
-
   "navigation_button": {
     "enable": true,
-    "label": "Get This Template",
-    "link": "https://themefisher.com/products/blazex-astro"
+    "label": "LaunchBox",
+    "link": "https://launchbox.conversioncollective.io/"
   },
-
-    "google_tag_manager": {
+  "google_tag_manager": {
     "enable": false,
     "gtm_id": "GTM-XXXXXX"
   },
-
   "metadata": {
-    "meta_author": "Themefisher",
-    "meta_image": "/images/og-image.png",
-    "meta_description": "Sass theme for Astro"
+    "meta_author": "Conversion Collective",
+    "meta_image": "/images/Conversion Collective Logos (3).png",
+    "meta_description": "Performance Marketing Agency"
   }
 }
