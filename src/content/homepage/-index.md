@@ -1,113 +1,121 @@
 ---
 hero:
-  title: "Boost productivity <br> with our powerful <br> BlazeX solution."
-  content: "BlazeX is driven by a shared commitment to excellence, and a relentless pursuit of customer success."
-  image: "/images/homepage/banner.png"
+  title: Scale Your Business with AI-Powered Solutions
+  content: >-
+    From performance marketing to rapid development and data analytics, we help
+    businesses grow with modern tools and expertise.
+  image: /images/about/campaigns.png
   button_1:
     enable: true
-    label: "Get Started Now"
-    link: "/pricing"
+    label: What We Do
+    link: /services
   button_2:
     enable: true
-    label: "Book A Free Demo"
-    link: "/contact"
+    label: Free Creative Pack
+    link: /services/creative
   client:
     images:
-      - "/images/homepage/avatar/avatar-1.png"
-      - "/images/homepage/avatar/avatar-2.png"
-      - "/images/homepage/avatar/avatar-3.png"
-      - "/images/homepage/avatar/avatar-4.png"
+      - /images/homepage/avatar/avatar-1.png
+      - /images/homepage/avatar/avatar-2.png
+      - /images/homepage/avatar/avatar-3.png
+      - /images/homepage/avatar/avatar-4.png
     clients:
-      rating: "4.5"
-      user: "325k Satisfied Customers"
-
+      rating: '5'
+      user: 20-30% Target ROAS Achievement
 brand:
-  title: "Trusted by 2000+ brands:"
+  title: 'We work with leading platforms:'
   logos:
-    - "/images/homepage/brands/1.svg"
-    - "/images/homepage/brands/2.svg"
-    - "/images/homepage/brands/3.svg"
-    - "/images/homepage/brands/4.svg"
-    - "/images/homepage/brands/5.svg"
-    - "/images/homepage/brands/6.svg"
-
+    - /images/homepage/brands/google-ads.png
+    - /images/homepage/brands/meta.png
+    - /images/homepage/brands/taboola.png
+    - /images/integration/tiktok-ads.png
+    - media/public/images/Logos.png
 about:
-  title: "BlazeX makes remote <br> team work faster."
-  content_1: "We pride ourselves on our strong set of values that guide our actions and decision-making processes."
-  content_2: "With a deep understanding of the needs of our target market, we are committed to developing cutting-edge products and services that exceed expectations."
+  title: Modern Solutions for <br> Modern Businesses
+  content_1: >-
+    We combine deep expertise with cutting-edge tools to deliver results across
+    marketing, development, and analytics.
+  content_2: >-
+    Whether you’re scaling spend, spinning up new offers, or need high-volume
+    creative fast, we’ve built the engine to deliver it.
   image:
-    image: "/images/homepage/about.png"
+    image: /images/homepage/about.png
     point:
-      - "Mobile app easy management & access"
-      - "BlazeX of features for handle the card easily"
-      - "Strong security system"
+      - Mobile app easy management & access
+      - BlazeX of features for handle the card easily
+      - Strong security system
   achievements:
-    - key: 268
-      suffix: "%"
-      value: "Higher Productivity"
-    - key: 2.5
-      suffix: "X"
-      value: "Faster Remote Work Process"
-    - key: 16
-      suffix: "+"
-      value: "Years of Experiences"
-    - key: 7
-      suffix: "+"
-      value: "Hours Saved Per Month"
-
+    - key: '2'
+      suffix: X
+      value: Typical Ad Spend Growth
+    - key: '20'
+      suffix: +
+      value: Years Experience
+    - key: '48'
+      suffix: K+
+      value: Ads Produced Annually
+    - key: '99'
+      suffix: '%'
+      value: On-Time Delivery
 step:
-  title: "Simplify complex processes with ease"
+  title: The Operating System Behind Scalable Performance
   steps:
-    - title: "Create Free Account"
-      description: "The ability for the integrating them to marketing team to see all results."
-    - title: "Invite Your Team"
-      description: "The ability for the integrating them elit to marketing team to see all results."
-    - title: "Start Improving Fast"
-      description: "The ability for the integrating them elit to marketing team to see all results."
-  start: "BlazeX is driven by a shared commitment to excellence, and a relentless pursuit of customer success."
+    - title: Creative Production
+      description: >-
+        High-volume static + video creative engineered for rapid testing and
+        profitable scale.
+    - title: Media Buying
+      description: >-
+        Full-funnel campaign management across major platforms with a focus on
+        efficiency and growth.
+    - title: Performance Insights
+      description: >-
+        Clear reporting, creative learnings, and iteration cycles that turn data
+        into continuous improvement.
+  start: See How Fast Creative and Smart Media Buying Can Transform Performance
   button:
     enable: true
-    label: "Get Started Now"
-    link: "/pricing"
-
+    label: Claim Your Free Creative Pack
+    link: /services/creative
 feature:
-  title: "Seamlessly collaborate with integrated tools"
-  image: "/images/homepage/feature/feature-1.png"
-  content: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS."
+  title: A Performance System Built on Creative, Data, and Smart Automation
+  image: /images/homepage/feature/feature-1.png
+  content: >-
+    We blend high-volume creative production with structured testing, clean
+    data, and platform-native strategy to drive predictable, scalable results.
   points:
-    - "Mobile app easy management and access"
-    - "Handle the card easily and safely"
-    - "Strong security system"
+    - Rapid creative cycles that fuel constant testing
+    - Automated workflows for faster, cleaner iteration
+    - Performance insights that guide smarter spend decisions
   action:
-    title: "Take action based on data & get results."
+    title: Trusted by Teams Who Need Real Growth, Not Theories
     review:
-      user: "Amanda Seyfried"
-      designation: "Sales & Marketing, Alien Ltd."
-      comment: "Super satisfied by providing them with interface that is easy to use and navigate through, ensuring a great & pleasant user experience."
-    image_1: "/images/homepage/feature/data-1.png"
-    image_2: "/images/homepage/feature/data-2.png"
-    image_3: "/images/homepage/feature/data-3.png"
-
+      user: Amanda Seyfried
+      designation: Sales & Marketing, Alien Ltd.
+      comment: >-
+        Super satisfied by providing them with interface that is easy to use and
+        navigate through, ensuring a great & pleasant user experience.
+    image_1: /images/homepage/feature/data-1.png
+    image_2: /images/homepage/feature/data-2.png
+    image_3: /images/homepage/feature/data-3.png
 integration:
-  title: "Connect BlazeX with your favourite app for better result"
-  image: "/images/homepage/integration.png"
+  title: Power Your Growth With Our Full Performance Engine
+  image: /images/homepage/platforms.png
   button:
     enable: true
-    label: "Explore 100+ Apps"
-    link: "/integration"
-
+    label: Explore Our Platform
+    link: /platforms
 review:
-  title: "Customers love BlazeX"
-  badge: "TRUSTED BY 2000+ BRANDS"
-
+  title: Client Success Stories
+  badge: PROVEN RESULTS
 cta:
-  title: "We are trusted by over 2000+ customers. Join them now and grow your business."
+  title: Ready to accelerate your growth? Let's talk about your goals.
   button_1:
     enable: true
-    label: "More About Us"
-    link: "/about"
+    label: Explore Our Platform
+    link: /platforms
   button_2:
     enable: true
-    label: "Request a Callback"
-    link: "/contact"
+    label: Get a Free Creative Package
+    link: /services/creative
 ---
