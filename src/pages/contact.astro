@@ -2,23 +2,19 @@
 import config from "@/config/config.json";
 import DynamicIcon from "@/helpers/DynamicIcon";
 import Base from "@/layouts/Base.astro";
+import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
-import { getEntry, type CollectionEntry } from "astro:content";
 
-const contact = (await getEntry(
-  "contact",
-  "-index"
-)) as CollectionEntry<"contact">;
-const { title, description, meta_title, connect } = contact.data;
-
-const cta = (await getEntry(
-  "ctaSection",
-  "call-to-action"
-)) as CollectionEntry<"ctaSection">;
+const contactIndex = await getListPage("contact", "-index");
+if (contactIndex.data.draft) {
+  return Astro.redirect("/404");
+}
+const { contact_form_action }: { contact_form_action: string } = config.params;
+const { title, description, connect } = contactIndex.data;
 ---
 
-<Base title={title} meta_title={meta_title} description={description}>
+<Base {...contactIndex.data}>
   <section class="section" data-aos="fade-up-sm">
     <div class="container">
       <div class="row gy-5">
@@ -37,16 +33,29 @@ const cta = (await getEntry(
 
         <div class="col-12 md:col-10 mx-auto" data-aos="fade-up-sm">
           <div class="p-8 md:p-16 shadow-lg rounded-2xl">
-            <form action="https://formspree.io/f/xjkgrzae" method="POST">
+            <form action={contact_form_action} method="POST">
               <div class="row">
                 <div class="col-12">
                   <div class="mb-6">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="f-name" class="form-label"> First Name </label>
                     <input
-                      id="name"
-                      name="name"
+                      id="f-name"
+                      name="f-name"
                       class="form-input"
-                      placeholder="Your Name"
+                      placeholder="Your First Name"
+                      type="text"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-6">
+                    <label for="l-name" class="form-label"> Last Name </label>
+                    <input
+                      id="l-name"
+                      name="l-name"
+                      class="form-input"
+                      placeholder="Your Last Name"
                       type="text"
                       required
                     />
@@ -69,7 +78,7 @@ const cta = (await getEntry(
                 </div>
                 <div class="col-12">
                   <div class="mb-6">
-                    <label for="message" class="form-label">Message</label>
+                    <label for="message" class="form-label"> Message </label>
                     <textarea
                       id="message"
                       name="message"
@@ -98,10 +107,10 @@ const cta = (await getEntry(
                   data-aos="fade-up-sm"
                   data-aos-delay={i * 50}
                 >
-                  <div class="mx-auto rounded-full w-fit bg-theme-light mb-5">
+                  <div class="mx-auto rounded-full w-fit bg-light mb-5">
                     <DynamicIcon
                       icon={c.icon}
-                      className="text-secondary p-6 lg:p-[3.2rem] text-7xl lg:text-9xl"
+                      className="text-secondary p-6 lg:p-10 text-7xl lg:text-9xl"
                     />
                   </div>
 
@@ -119,5 +128,5 @@ const cta = (await getEntry(
     </div>
   </section>
 
-  <CallToAction cta={cta.data} />
+  <CallToAction />
 </Base>
