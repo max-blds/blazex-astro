@@ -1,0 +1,46 @@
+---
+import Brand from "@/components/Brand.astro";
+import CaseCard from "@/components/case/CaseCard.astro";
+import Base from "@/layouts/Base.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import CallToAction from "@/partials/CallToAction.astro";
+
+const caseIndex = await getListPage("case", "-index");
+if (caseIndex.data.draft) {
+  return Astro.redirect("/404");
+}
+const { title, description, hero } = caseIndex.data;
+const cases = await getSinglePage("case");
+---
+
+<Base title={title} meta_title={title} description={description}>
+  <section class="section pb-0">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center">
+        <h1
+          class="pb-4"
+          data-aos="fade-up-sm"
+          set:html={markdownify(hero!.title)}
+        />
+        <p
+          class="pb-8 text-balance"
+          data-aos="fade-up-sm"
+          set:html={markdownify(hero!.content)}
+        />
+      </div>
+    </div>
+  </section>
+
+  <Brand />
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row g-4">
+        {cases.map((caseItem, i) => <CaseCard caseItem={caseItem} i={i} />)}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+</Base>
