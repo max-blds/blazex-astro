@@ -1,0 +1,65 @@
+{
+  "file": "src/content/pages/privacy.md",
+  "name": "pages",
+  "fileType": "md",
+  "fmType": "yaml",
+  "template": [
+    {
+      "name": "title",
+      "label": "Title",
+      "type": "string",
+      "value": "",
+      "defaultValue": ""
+    },
+    {
+      "name": "meta_title",
+      "label": "Meta Title",
+      "type": "string",
+      "value": "",
+      "defaultValue": ""
+    },
+    {
+      "name": "badge",
+      "label": "Badge",
+      "type": "string",
+      "value": "",
+      "defaultValue": ""
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "string",
+      "value": "",
+      "defaultValue": ""
+    },
+    {
+      "name": "draft",
+      "label": "Draft",
+      "type": "boolean",
+      "value": false,
+      "defaultValue": ""
+    },
+    {
+      "name": "header",
+      "label": "Prioritizing Your Privacy: Our **Commitment to Data Protection**",
+      "type": "object",
+      "defaultValue": "",
+      "fields": [
+        {
+          "name": "title",
+          "label": "Title",
+          "type": "string",
+          "value": "",
+          "defaultValue": ""
+        },
+        {
+          "name": "content",
+          "label": "Content",
+          "type": "string",
+          "value": "",
+          "defaultValue": ""
+        }
+      ]
+    }
+  ]
+}
