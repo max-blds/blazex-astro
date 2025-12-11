@@ -1,8 +1,8 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
+import { Icon } from "astro-icon/components";
 import { IoMdCheckmark } from "react-icons/io";
 import ImageMod from "../ImageMod.astro";
-import Icon from "@/components/Icon.astro";
 
 const { feature } = Astro.props;
 ---
@@ -18,7 +18,7 @@ const { feature } = Astro.props;
         />
         <p
           set:html={markdownify(feature.content)}
-          class="mb-20 text-dark/70 text-balance"
+          class="mb-20 text-text-dark/70 text-balance"
           data-aos="fade-up-sm"
         />
         <ul>
@@ -37,10 +37,7 @@ const { feature } = Astro.props;
         </ul>
       </div>
       <div class="col-12 lg:col-6">
-        <div
-          class="bg-theme-light/60 w-fit mx-auto rounded-xl"
-          data-aos="zoom-in-sm"
-        >
+        <div class="bg-light/60 w-fit mx-auto rounded-xl" data-aos="zoom-in-sm">
           <ImageMod
             src={feature.image}
             alt="feature"
@@ -60,7 +57,7 @@ const { feature } = Astro.props;
       <div class="col-12 lg:col-5">
         <div class="w-full h-full max-md:mb-8">
           <div
-            class="relative mx-auto bg-theme-light w-[164px] md:w-[264px] h-[200px] md:h-[330px]"
+            class="relative mx-auto bg-light w-[164px] md:w-[264px] h-[200px] md:h-[330px]"
             style="border-radius: 252px 20px 20px;"
           >
             <div data-aos="zoom-in-sm" data-aos-delay="100">
@@ -103,7 +100,7 @@ const { feature } = Astro.props;
           <Icon name="quote" class="mb-10 text-5xl" data-aos="fade-up-sm" />
           <p
             set:html={markdownify(feature.action.review.comment)}
-            class="before:content-['"'] after:content-['"'] mb-6 font-medium max-lg:text-balance"
+            class="before:content-['“'] after:content-['”'] mb-6 font-medium max-lg:text-balance"
             data-aos="fade-up-sm"
             data-aos-delay="100"
           />

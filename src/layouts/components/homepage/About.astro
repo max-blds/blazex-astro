@@ -24,8 +24,8 @@ const { about } = Astro.props;
           >
             {
               about.image.point.map((item: string) => (
-                <div class="flex items-center mb-1 last:mb-0 bg-light w-fit rounded-full p-3 py-1">
-                  <TiTick className="text-light bg-tertiary rounded-full mr-2 text-lg max-lg:text-xs" />
+                <div class="flex items-center mb-1 last:mb-0 bg-text-light w-fit rounded-full p-3 py-1">
+                  <TiTick className="text-text-light bg-tertiary rounded-full mr-2 text-lg max-lg:text-xs" />
                   <p
                     set:html={markdownify(item)}
                     class="text-lg max-lg:text-xs"

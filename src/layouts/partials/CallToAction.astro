@@ -1,8 +1,12 @@
 ---
 import config from "@/config/config.json";
+import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 
-const { cta } = Astro.props;
+const cta = await getListPage("ctaSection", "call-to-action");
+if (!cta.enable) {
+  return null;
+}
 ---
 
 <section class="section pt-0" data-aos="fade-up-sm">
@@ -25,7 +29,7 @@ const { cta } = Astro.props;
           class="flex flex-col sm:flex-row justify-center gap-2 sm:relative"
         >
           <input
-            class="px-7 py-5 sm:w-full rounded-full border-dark bg-white text-dark focus:border-dark focus:ring-transparent"
+            class="px-7 py-5 sm:w-full rounded-full border-border bg-white text-text-dark focus:border-secondary focus:ring-transparent"
             placeholder="Your email address"
             type="email"
             name="subscribe"
@@ -34,7 +38,7 @@ const { cta } = Astro.props;
           />
           <button
             type="submit"
-            class="sm:absolute sm:right-[4px] sm:top-1/2 sm:-translate-y-1/2 px-6 py-3 md:py-4 text-light bg-secondary rounded-full"
+            class="sm:absolute sm:right-1 sm:top-1/2 sm:-translate-y-1/2 px-6 py-3 md:py-4 text-text-light bg-secondary rounded-full"
             >Get Started Now</button
           >
 
@@ -83,6 +87,6 @@ const { cta } = Astro.props;
 
 <section>
   <div class="container">
-    <hr class="w-full border-b border-t-0 border-dark" />
+    <hr class="w-full border-b border-t-0 border-border" />
   </div>
 </section>

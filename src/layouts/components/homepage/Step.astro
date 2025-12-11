@@ -8,7 +8,7 @@ const { step } = Astro.props;
 <section class="section bg-secondary">
   <div class="container">
     <h2
-      class="text-center max-xl:h3 text-light mb-14"
+      class="text-center max-xl:h3 text-text-light mb-14"
       set:html={markdownify(step.title)}
       data-aos="fade-up-sm"
     />
@@ -24,11 +24,11 @@ const { step } = Astro.props;
           >
             <h4
               set:html={markdownify(s.title)}
-              class="text-2xl text-light mb-2"
+              class="text-2xl text-text-light mb-2"
             />
             <p
               set:html={markdownify(s.description)}
-              class="text-lg text-light/70"
+              class="text-lg text-text-light/70"
             />
           </div>
         ))
@@ -36,7 +36,7 @@ const { step } = Astro.props;
     </div>
     <h4
       set:html={markdownify(step.start)}
-      class="text-center text-balance mb-10 text-light"
+      class="text-center text-balance mb-10 text-text-light"
       data-aos="fade-up-sm"
     />
     <div class="flex justify-center" data-aos="fade-up-sm">

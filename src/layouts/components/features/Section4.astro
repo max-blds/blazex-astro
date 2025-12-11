@@ -6,7 +6,7 @@ import ImageMod from "../ImageMod.astro";
 const { section_4 } = Astro.props;
 ---
 
-<div class="bg-theme-light rounded-lg px-10 pt-10" data-aos="fade-up-sm">
+<div class="bg-light rounded-lg px-10 pt-10 h-full" data-aos="fade-up-sm">
   <div class="flex items-center justify-between mb-6">
     <h4
       class="max-xl:h5 text-center text-balance"
@@ -24,13 +24,24 @@ const { section_4 } = Astro.props;
     data-aos="fade-up-sm"
   />
 
-  <div data-aos="fade-up-sm">
-    <ImageMod
-      class="w-full h-[209px] object-cover"
-      src={section_4.image_1}
-      alt={section_4.title}
-      width={423}
-      height={209}
-    />
+  <div class="flex gap-4" data-aos="fade-up-sm">
+    <div>
+      <ImageMod
+        class="object-contain"
+        src={section_4.image_1}
+        alt={section_4.title}
+        width={423}
+        height={209}
+      />
+    </div>
+    <div>
+      <ImageMod
+        class="object-contain"
+        src={section_4.image_2}
+        alt={section_4.title}
+        width={222}
+        height={209}
+      />
+    </div>
   </div>
 </div>

@@ -1,8 +1,8 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import Button from "@/shortcodes/Button";
 import { Icon } from "astro-icon/components";
 import { TiTick } from "react-icons/ti";
+import CustomButton from "../CustomButton.astro";
 import ImageMod from "../ImageMod.astro";
 
 const { section_1 } = Astro.props;
@@ -25,8 +25,8 @@ const { section_1 } = Astro.props;
           >
             {
               section_1.highlights.map((item: string) => (
-                <div class="flex items-center mb-1 last:mb-0 bg-light w-fit rounded-full p-3 py-1">
-                  <TiTick className="text-light bg-tertiary rounded-full mr-2 text-lg max-lg:text-xs" />
+                <div class="flex items-center mb-1 last:mb-0 bg-text-light w-fit rounded-full p-3 py-1">
+                  <TiTick className="text-text-light bg-tertiary rounded-full mr-2 text-lg max-lg:text-xs" />
                   <p
                     set:html={markdownify(item)}
                     class="text-lg max-lg:text-xs"
@@ -53,12 +53,17 @@ const { section_1 } = Astro.props;
           <div>
             {
               section_1.features.map((item: string) => (
-                <div class="flex items-center mb-4 last:mb-0 bg-light w-fit rounded-full p-3 py-1">
+                <div class="flex items-center mb-4 last:mb-0 bg-text-light w-fit rounded-full p-3 py-1">
                   <Icon name="tick" class="text-tertiary mr-3 text-lg" />
                   <p set:html={markdownify(item)} class="text-xl" />
                 </div>
               ))
             }
+            <CustomButton
+              link={section_1.button.link}
+              label={section_1.button.label}
+              className="mt-6 lg:mt-10"
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { markdownify } from "@/lib/utils/textConverter";
 import React, { useEffect, useState } from "react";
-import CustomButton from "../CustomButton";
+import CustomButton from "../functional-component/CustomButton";
 import Counter from "../functional-component/Counter";
 
 const Plans = ({ plans }: { plans: any }) => {
@@ -33,7 +33,7 @@ const Plans = ({ plans }: { plans: any }) => {
               className="sr-only peer"
               checked={checked}
             />
-            <div className="w-[70px] h-[34px] border-secondary bg-secondary border rounded-full peer peer-checked:after:left-[95%] peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-1 after:bg-light after:rounded-full after:h-[24px] after:w-[24px] after:transition-all scale-100 peer-checked:active:after:scale-75 peer-active:after:scale-75"></div>
+            <div className="w-[70px] h-[34px] border-secondary bg-secondary border rounded-full peer peer-checked:after:left-[95%] peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:left-1 after:bg-text-light after:rounded-full after:h-[24px] after:w-[24px] after:transition-all scale-100 peer-checked:active:after:scale-75 peer-active:after:scale-75"></div>
           </label>
 
           <label className="h5 m-0" id="annually">
@@ -52,7 +52,7 @@ const Plans = ({ plans }: { plans: any }) => {
               data-aos="fade-up-sm"
               data-aos-delay={`${i * 100}`}
             >
-              <div className="border rounded-lg p-0 h-full">
+              <div className="border border-border rounded-lg p-0 h-full">
                 <div className="p-7">
                   <h4
                     dangerouslySetInnerHTML={{ __html: markdownify(p.name) }}
@@ -106,7 +106,7 @@ const Plans = ({ plans }: { plans: any }) => {
                   />
                 </div>
 
-                <hr className="w-full" />
+                <hr className="w-full border-border" />
 
                 <ul className="p-7">
                   <p

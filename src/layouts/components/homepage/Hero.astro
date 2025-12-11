@@ -8,7 +8,7 @@ import CustomButton from "../CustomButton.astro";
 const { hero, brand } = Astro.props;
 ---
 
-<section class="section overflow-x-hidden relative lg:pt-[135px]">
+<section class="py-24 lg:pb-52 xl:pb-28 overflow-hidden relative lg:pt-[135px]">
   <ImageMod
     src="/images/homepage/green-pattern.png"
     alt="green pattern"
@@ -21,12 +21,12 @@ const { hero, brand } = Astro.props;
       <div class="col-12 lg:col-7">
         <h1
           set:html={markdownify(hero.title)}
-          class="max-xl:h2 mb-6 max-lg:text-center"
+          class="max-xl:h2 mb-6 max-lg:text-center relative z-10"
           data-aos="fade-up-sm"
         />
         <p
           set:html={markdownify(hero.content)}
-          class="mb-10 text-2xl max-lg:text-center"
+          class="mb-10 text-2xl max-lg:text-center text-balance"
           data-aos="fade-up-sm"
         />
         <div
@@ -75,15 +75,9 @@ const { hero, brand } = Astro.props;
                 class="mr-2 text-secondary"
               />
               {
-                (() => {
-                  const ratingString = hero.client.clients.rating || "0";
-                  const ratingNum = parseFloat(ratingString.split('/')[0]);
-                  const starCount = Math.min(Math.max(0, Math.ceil(ratingNum)), 5);
-                  
-                  return Array.from({ length: starCount }).map((_, i) => (
-                    <FaStar className="text-yellow-400 mr-1" />
-                  ));
-                })()
+                [...Array(Math.ceil(hero.client.clients.rating))].map(() => (
+                  <FaStar className="text-yellow-400 mr-1" />
+                ))
               }
             </div>
             <p
@@ -94,13 +88,13 @@ const { hero, brand } = Astro.props;
         </div>
       </div>
       <div class="col-12 lg:col-5">
-        <div class="relative h-full" data-aos="fade-up-sm">
+        <div class="relative h-full pb-20" data-aos="fade-up-sm">
           <ImageMod
             src={hero.image}
             alt="hero"
             width={970}
             height={654}
-            class="lg:absolute top-0 left-0 h-fit lg:min-w-max shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-xl lg:-translate-x-12"
+            class="lg:absolute top-0 left-0 h-fit lg:min-w-max shadow-[0px_9px_20px_rgba(13,_38,_76,_0.19)] rounded-xl lg:-translate-x-12"
           />
         </div>
       </div>
@@ -131,9 +125,9 @@ const { hero, brand } = Astro.props;
                   <ImageMod
                     src={item}
                     alt="brand"
-                    width={300}
-                    height={76}
-                    class="w-auto h-[76px] object-contain grayscale opacity-30"
+                    width={0}
+                    height={38}
+                    class="w-full h-[38px] grayscale opacity-30"
                   />
                 </div>
               ))

@@ -10,7 +10,7 @@ const { blog_folder } = config.settings;
 const posts = await getSinglePage(blog_folder as CollectionKey);
 ---
 
-<section class="section bg-theme-light">
+<section class="section bg-light">
   <div class="container">
     <h2 class="text-center mb-10" data-aos="fade-up-sm">
       Latest from our blog
@@ -24,7 +24,7 @@ const posts = await getSinglePage(blog_folder as CollectionKey);
             data-aos="fade-up-sm"
             data-aos-delay={100 + index * 50}
           >
-            <div class="bg-light relative border overflow-hidden rounded-2xl">
+            <div class="bg-text-light relative border border-border overflow-hidden rounded-2xl">
               <ImageMod
                 width={416}
                 height={232}
@@ -38,7 +38,7 @@ const posts = await getSinglePage(blog_folder as CollectionKey);
                   {dateFormat(post.data.date)}
                 </p>
                 <a
-                  href={`/${blog_folder}/${post.slug}`}
+                  href={`/${blog_folder}/${post.id}`}
                   class="after:absolute after:inset-0 font-semibold text-xl"
                   set:html={markdownify(post.data.title)}
                 />

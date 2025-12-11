@@ -11,7 +11,7 @@ const { cta } = Astro.props;
 >
   <div class="container relative z-[2]">
     <h2
-      class="text-center max-xl:h3 text-light mb-14"
+      class="text-center max-xl:h3 text-text-light mb-14"
       set:html={markdownify(cta.title)}
       data-aos="fade-up-sm"
     />
@@ -35,7 +35,7 @@ const { cta } = Astro.props;
             link={cta.button_2.link}
             label={cta.button_2.label}
             style="outline"
-            className="text-light"
+            className="text-text-light"
           />
         )
       }

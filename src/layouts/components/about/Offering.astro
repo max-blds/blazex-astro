@@ -72,7 +72,7 @@ const { offering } = Astro.props;
                   <div class="mb-8">
                     <h5
                       set:html={markdownify("Impressive!")}
-                      class="text-light text-xl lg:text-2xl mb-1"
+                      class="text-text-light text-xl lg:text-2xl mb-1"
                     />
                     <div class="flex items-center">
                       <FaStar className="text-tertiary text-base mr-1" />
@@ -84,13 +84,13 @@ const { offering } = Astro.props;
                   </div>
                   <p
                     set:html={markdownify(offering.offers[2].quote)}
-                    class="before:content-['“'] after:content-['”'] text-light text-sm lg:text-xl"
+                    class="before:content-['“'] after:content-['”'] text-text-light text-sm lg:text-xl"
                   />
                 </div>
 
                 <!-- review -->
                 <div
-                  class="pt-6 max-md:mt-6 border-t-2 border-light/10 flex items-center justify-between"
+                  class="pt-6 max-md:mt-6 border-t-2 border-text-light/10 flex items-center justify-between"
                 >
                   <div class="flex items-center gap-x-3">
                     <div>
@@ -105,11 +105,11 @@ const { offering } = Astro.props;
                     <div>
                       <p
                         set:html={markdownify(offering.offers[2].author)}
-                        class="text-light text-sm lg:text-lg"
+                        class="text-text-light text-sm lg:text-lg"
                       />
                       <p
                         set:html={markdownify(offering.offers[2].role)}
-                        class="text-light/70 font-normal text-sm lg:text-lg"
+                        class="text-text-light/70 font-normal text-sm lg:text-lg"
                       />
                     </div>
                   </div>

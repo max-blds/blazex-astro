@@ -8,7 +8,7 @@ const { caseItem, i, color } = Astro.props;
 
 <div class="col-12" data-aos="fade-up-sm" data-aos-delay={`${i * 100}`}>
   <div
-    class={`row my-6 md:my-14 rounded-md overflow-hidden ${i === 0 && "mt-0"}  ${i === 0 || color ? "bg-tertiary" : i === 1 ? "bg-text text-light" : "bg-accent"}`}
+    class={`row my-6 md:my-14 rounded-md overflow-hidden ${i === 0 && "mt-0"}  ${i === 0 || color ? "bg-tertiary" : i === 1 ? "bg-text text-text-light" : "bg-accent"}`}
   >
     <div class="col-12 lg:col-7 p-0 min-h-full order-2 lg:order-1">
       <div class="flex flex-col justify-between h-full p-10 md:p-20">
@@ -17,14 +17,14 @@ const { caseItem, i, color } = Astro.props;
             set:html={markdownify(caseItem.data.badge)}
             class="text-lg font-semibold mb-4"
           />
-          <a href={`/case-studies/${caseItem.slug}`} class="text-6xl font-bold">
+          <a href={`/case/${caseItem.id}`} class="text-6xl font-bold">
             {caseItem.data.title}
           </a>
           <p set:html={markdownify(caseItem.data.description)} class="mt-4" />
         </div>
         <div>
           <hr
-            class={`border-t mt-24 mb-9 ${i === 1 ? "border-border" : "border-dark"}`}
+            class={`border-t mt-24 mb-9 ${i === 1 ? "border-border" : "border-text-dark"}`}
           />
           <div class="row mb-12">
             {
@@ -38,7 +38,7 @@ const { caseItem, i, color } = Astro.props;
           </div>
 
           <CustomButton
-            link={`/case-studies/${caseItem.slug}`}
+            link={`/case/${caseItem.id}`}
             label={"Read Full Story"}
             data-aos="fade-up-sm"
             data-aos-delay="300"

@@ -1,15 +1,19 @@
 ---
-import TwSizeIndicator from "../components/TwSizeIndicator.astro";
+import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import { plainify } from "@/lib/utils/textConverter";
 import Footer from "@/partials/Footer.astro";
 import Header from "@/partials/Header.astro";
-import "@/styles/main.scss";
+import "@/styles/main.css";
 import { AstroFont } from "astro-font";
-import {ClientRouter } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "aos/dist/aos.css";
 import "swiper/css";
+import {
+  GoogleTagmanager,
+  GoogleTagmanagerNoscript,
+} from "@digi4care/astro-google-tagmanager";
 
 // font families
 const pf = theme.fonts.font_family.primary;
@@ -45,6 +49,12 @@ const { title, meta_title, description, image, noindex, canonical } =
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- google tag manager -->
+    {
+      config.google_tag_manager.enable && (
+        <GoogleTagmanager id={config.google_tag_manager.gtm_id} />
+      )
+    }
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
     <!-- theme meta -->
@@ -168,11 +178,20 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
+    {/* google tag manager noscript */}
+    {
+      config.google_tag_manager.enable && (
+        <GoogleTagmanagerNoscript id={config.google_tag_manager.gtm_id} />
+      )
+    }
+
     <TwSizeIndicator />
     <Header />
     <main id="main-content">
       <slot />
     </main>
+    <Footer />
+
     <script>
       import AOS from "aos";
 
@@ -186,29 +205,5 @@ const { title, meta_title, description, image, noindex, canonical } =
       aosInit();
       document.addEventListener("astro:after-swap", aosInit);
     </script>
-    <Footer />
-
-    <!-- LinkedIn Insight Tag -->
-    <script type="text/javascript">
-      _linkedin_partner_id = "8029426";
-      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-    </script>
-    <script type="text/javascript">
-      (function(l){
-        if(!l){
-          window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-          window.lintrk.q=[]
-        }
-        var s = document.getElementsByTagName("script")[0];
-        var b = document.createElement("script");
-        b.type = "text/javascript"; b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);
-      })(window.lintrk);
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8029426&fmt=gif" />
-    </noscript>
   </body>
 </html>

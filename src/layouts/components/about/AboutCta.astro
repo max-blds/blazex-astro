@@ -6,7 +6,7 @@ const { call_to_action } = Astro.props;
 ---
 
 <div class="container">
-  <div class="px-5 py-10 lg:py-32 bg-theme-light rounded-xl">
+  <div class="px-5 py-10 lg:py-32 bg-light rounded-xl">
     <div class="row justify-center">
       <div class="col-12 col-lg-10 text-center">
         <h2
@@ -15,7 +15,7 @@ const { call_to_action } = Astro.props;
           set:html={markdownify(call_to_action.title)}
         />
         <p
-          class="pb-8 text-dark/60"
+          class="pb-8 text-text-dark/60"
           data-aos="fade-up-sm"
           set:html={markdownify(call_to_action.description)}
         />

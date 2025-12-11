@@ -1,7 +1,7 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import Button from "@/shortcodes/Button";
 import { Icon } from "astro-icon/components";
+import CustomButton from "../CustomButton.astro";
 import ImageMod from "../ImageMod.astro";
 
 const { section_2 } = Astro.props;
@@ -30,12 +30,18 @@ const { section_2 } = Astro.props;
           <div>
             {
               section_2.features.map((item: string) => (
-                <div class="flex items-center mb-4 last:mb-0 bg-light w-fit rounded-full p-3 py-1">
+                <div class="flex items-center mb-4 last:mb-0 bg-text-light w-fit rounded-full p-3 py-1">
                   <Icon name="tick" class="text-tertiary mr-3 text-lg" />
                   <p set:html={markdownify(item)} class="text-xl" />
                 </div>
               ))
             }
+
+            <CustomButton
+              label={section_2.button.label}
+              link={section_2.button.link}
+              className="mt-6 lg:mt-10"
+            />
           </div>
         </div>
       </div>

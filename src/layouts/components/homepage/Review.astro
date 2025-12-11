@@ -1,15 +1,14 @@
 ---
+import { getListPage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
-import type { CollectionEntry } from "astro:content";
-import { getEntry } from "astro:content";
 import { FaStar } from "react-icons/fa6";
 
-const review = (await getEntry(
-  "reviewSection",
-  "review"
-)) as CollectionEntry<"reviewSection">;
+const review = await getListPage("reviewSection", "review");
+const { enable, reviews } = review.data;
 
-const { reviews } = review.data;
+if (!enable) {
+  return null;
+}
 ---
 
 <div class="row lg:gx-5 max-lg:gy-3">
@@ -21,7 +20,7 @@ const { reviews } = review.data;
         data-aos-delay={100 + i * 50}
       >
         <div
-          class={`p-10 border border-dark rounded-lg ${(i + 1) % 2 !== 0 && "bg-accent"}`}
+          class={`p-10 border border-border rounded-lg ${(i + 1) % 2 !== 0 && "bg-accent"}`}
         >
           <h4
             set:html={markdownify(r.comment)}
@@ -35,7 +34,7 @@ const { reviews } = review.data;
             <p set:html={markdownify(r.designation)} class="text-lg" />
           </div>
 
-          <hr class="my-7 border border-dark opacity-15" />
+          <hr class="my-7 border border-text-dark opacity-15" />
 
           <div class="flex items-center justify-between">
             <p class="text-xl font-medium">
@@ -46,7 +45,7 @@ const { reviews } = review.data;
             </p>
             <div class="flex items-center">
               {[...Array(Math.ceil(r.rating))].map(() => (
-                <FaStar className="text-lg text-dark mr-1" />
+                <FaStar className="text-lg text-text-dark mr-1" />
               ))}
             </div>
           </div>
