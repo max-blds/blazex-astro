@@ -1,63 +1,23 @@
 {
   "main": [
     {
-      "name": "All Pages",
-      "url": "",
-      "hasChildren": true,
-      "children": [
-        {
-          "name": "Home",
-          "url": "/"
-        },
-        {
-          "name": "Case Studies",
-          "url": "/case"
-        },
-        {
-          "name": "Blog",
-          "url": "/blog"
-        },
-        {
-          "name": "Features",
-          "url": "/features"
-        },
-        {
-          "name": "Integration",
-          "url": "/integration"
-        },
-        {
-          "name": "Changelog",
-          "url": "/changelog"
-        },
-        {
-          "name": "Request a Demo",
-          "url": "/demo"
-        },
-        {
-          "name": "Terms",
-          "url": "/terms"
-        },
-        {
-          "name": "Privacy",
-          "url": "/privacy"
-        },
-        {
-          "name": "404",
-          "url": "/404"
-        }
-      ]
-    },
-    {
-      "name": "Pricing",
-      "url": "/pricing"
+      "name": "About",
+      "url": "/about"
     },
     {
       "name": "Contact",
       "url": "/contact"
     },
     {
-      "name": "About",
-      "url": "/about"
+      "name": "Services",
+      "url": "/services",
+      "children": [
+        {
+          "name": "",
+          "url": ""
+        }
+      ],
+      "hasChildren": true
     }
   ],
   "footer": [
