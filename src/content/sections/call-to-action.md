@@ -1,9 +1,10 @@
 ---
-title: "Ready to Scale Your Campaigns?"
-content: "Get a free consultation and see how our AI-powered approach can help you achieve your ROAS goals."
+enable: true
+title: "Ready to jump in?"
+content: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS"
 button:
   enable: true
-  label: "Book Free Strategy Call"
-  link: "/contact"
-  placeholder: "Book Free Strategy Call"
+  label: "More About Us"
+  placeholder: "Enter email address"
+  link: "/about"
 ---

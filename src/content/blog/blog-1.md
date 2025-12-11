@@ -2,7 +2,7 @@
 title: "Carbonia reaches it’s revenue goals faster."
 meta_title: ""
 description: "Carbonia reaches it’s revenue goals faster."
-date: 2024-04-04T05:00:00Z
+date: 2025-04-04T05:00:00Z
 image: "/images/blog/blog-1.png"
 draft: false
 ---

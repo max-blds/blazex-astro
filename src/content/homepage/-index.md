@@ -1,15 +1,15 @@
 ---
 hero:
-  title: "Scale Your Business <br> with AI-Powered <br> Solutions."
-  content: "From performance marketing to rapid development and data analytics, we help businesses grow with modern tools and expertise."
-  image: "/images/homepage/home-hero.png"
+  title: "Boost productivity <br> with our powerful <br> BlazeX solution."
+  content: "BlazeX is driven by a shared commitment to excellence, and a relentless pursuit of customer success."
+  image: "/images/homepage/banner.png"
   button_1:
     enable: true
-    label: "See what we do"
-    link: "/services"
+    label: "Get Started Now"
+    link: "/pricing"
   button_2:
     enable: true
-    label: "Get Started"
+    label: "Book A Free Demo"
     link: "/contact"
   client:
     images:
@@ -18,93 +18,96 @@ hero:
       - "/images/homepage/avatar/avatar-3.png"
       - "/images/homepage/avatar/avatar-4.png"
     clients:
-      rating: "20-30%"
-      user: "Target ROAS Achievement"
+      rating: "4.5"
+      user: "325k Satisfied Customers"
 
 brand:
-  title: "We work with leading platforms:"
+  title: "Trusted by 2000+ brands:"
   logos:
-    - "/images/homepage/brands/meta.png"
-    - "/images/homepage/brands/google-ads.png"
-    - "/images/homepage/brands/taboola.png"
-    - "/images/homepage/brands/retool.png"
-    - "/images/homepage/brands/make.png"
-    - "/images/homepage/brands/airtable.png"
+    - "/images/homepage/brands/1.svg"
+    - "/images/homepage/brands/2.svg"
+    - "/images/homepage/brands/3.svg"
+    - "/images/homepage/brands/4.svg"
+    - "/images/homepage/brands/5.svg"
+    - "/images/homepage/brands/6.svg"
 
 about:
- title: "Modern Solutions for <br> Modern Businesses"
- content_1: "We combine deep expertise with cutting-edge tools to deliver results across marketing, development, and analytics."
- content_2: "Whether you need to scale campaigns, build MVPs fast, or understand customer value, we have the solutions."
- image:
-   image: "/images/homepage/about.png"
-   point:
-     - "AI-powered marketing"
-     - "Rapid development"
-     - "Data-driven insights"
- achievements:
-   - key: 2
-     suffix: "X"
-     value: "Typical Ad Spend Growth"
-   - key: 20
-     suffix: "+"
-     value: "Years Experience"
-   - key: 3
-     suffix: ""
-     value: "Core Service Areas"
+  title: "BlazeX makes remote <br> team work faster."
+  content_1: "We pride ourselves on our strong set of values that guide our actions and decision-making processes."
+  content_2: "With a deep understanding of the needs of our target market, we are committed to developing cutting-edge products and services that exceed expectations."
+  image:
+    image: "/images/homepage/about.png"
+    point:
+      - "Mobile app easy management & access"
+      - "BlazeX of features for handle the card easily"
+      - "Strong security system"
+  achievements:
+    - key: 268
+      suffix: "%"
+      value: "Higher Productivity"
+    - key: 2.5
+      suffix: "X"
+      value: "Faster Remote Work Process"
+    - key: 16
+      suffix: "+"
+      value: "Years of Experiences"
+    - key: 7
+      suffix: "+"
+      value: "Hours Saved Per Month"
 
 step:
- title: "Solutions for Every Need"
- steps:
-   - title: "Marketing & Media Buying"
-     description: "Scale your campaigns with AI-powered optimization across major platforms."
-   - title: "Rapid Development"
-     description: "Build and launch MVPs fast with modern no-code and low-code tools."
-   - title: "Data Analytics"
-     description: "Understand customer value and optimize with data-driven insights."
- start: "Start growing your business with our comprehensive solutions."
- button:
-   enable: true
-   label: "Our Services"
-   link: "/services"
+  title: "Simplify complex processes with ease"
+  steps:
+    - title: "Create Free Account"
+      description: "The ability for the integrating them to marketing team to see all results."
+    - title: "Invite Your Team"
+      description: "The ability for the integrating them elit to marketing team to see all results."
+    - title: "Start Improving Fast"
+      description: "The ability for the integrating them elit to marketing team to see all results."
+  start: "BlazeX is driven by a shared commitment to excellence, and a relentless pursuit of customer success."
+  button:
+    enable: true
+    label: "Get Started Now"
+    link: "/pricing"
 
 feature:
- title: "Technology-First Approach"
- image: "/images/homepage/feature/adnexus.png"
- content: "Our solutions combine modern platforms with expert implementation to deliver exceptional results."
- points:
-   - "AI-powered marketing optimization"
-   - "Rapid prototype development"
-   - "Advanced analytics and LTV modeling"
- action:
-   title: "Solutions that scale with your business."
-   review:
-     user: "Quiz Griz"
-     designation: "Display Content Marketing"
-     comment: "Working with Max and his team was a game-changer. They scaled us into new platforms, managed everything seamlessly, and were rock solid during our sale process. Like an outsourced marketing department—just point them in the right direction. They took us to the next level."
-   image_1: "/images/homepage/feature/creative.png"
-   image_2: "/images/homepage/feature/optimization.png"
-   image_3: "/images/homepage/feature/reporting.png"
+  title: "Seamlessly collaborate with integrated tools"
+  image: "/images/homepage/feature/feature-1.png"
+  content: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS."
+  points:
+    - "Mobile app easy management and access"
+    - "Handle the card easily and safely"
+    - "Strong security system"
+  action:
+    title: "Take action based on data & get results."
+    review:
+      user: "Amanda Seyfried"
+      designation: "Sales & Marketing, Alien Ltd."
+      comment: "Super satisfied by providing them with interface that is easy to use and navigate through, ensuring a great & pleasant user experience."
+    image_1: "/images/homepage/feature/data-1.png"
+    image_2: "/images/homepage/feature/data-2.png"
+    image_3: "/images/homepage/feature/data-3.png"
 
 integration:
- title: "Full-Service Solutions Across Leading Platforms"
- image: "/images/homepage/platforms.png"
- button:
-   enable: true
-   label: "View Our Services"
-   link: "/services"
+  title: "Connect BlazeX with your favourite app for better result"
+  image: "/images/homepage/integration.png"
+  button:
+    enable: true
+    label: "Explore 100+ Apps"
+    link: "/integration"
 
 review:
- title: "Client Success Stories"
- badge: "PROVEN RESULTS"
+  title: "Customers love BlazeX"
+  badge: "TRUSTED BY 2000+ BRANDS"
 
 cta:
- title: "Ready to accelerate your growth? Let's talk about your goals."
- button_1:
-   enable: true
-   label: "Contact Us"
-   link: "/contact"
- button_2:
-   enable: true
-   label: "Our Services"
-   link: "/services"
+  title: "We are trusted by over 2000+ customers. Join them now and grow your business."
+  button_1:
+    enable: true
+    label: "More About Us"
+    link: "/about"
+  button_2:
+    enable: true
+    label: "Request a Callback"
+    link: "/contact"
 ---

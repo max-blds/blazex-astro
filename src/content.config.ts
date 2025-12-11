@@ -1,49 +1,19 @@
 import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
-// Add this at the top of your file
-const debugCollection = (data: any) => {
-  console.log('Collection Data:', JSON.stringify(data, null, 2));
-  return data;
-};
-
-const createDebugSchema = (schema: any, name: string) => {
-  return schema.superRefine((data: any, ctx: any) => {
-    console.log(`Validating ${name}:`, data);
-    try {
-      schema.parse(data);
-    } catch (error) {
-      console.error(`Validation error in ${name}:`, error);
-      if (error instanceof Error) {
-        ctx.addIssue({
-          code: 'custom',
-          message: `Schema validation failed: ${error.message}`,
-        });
-      } else {
-        ctx.addIssue({
-          code: 'custom',
-          message: 'Schema validation failed due to an unknown error.',
-        });
-      }
-    }
-    return data;
-  });
-};
-
-const loggedArray = <T extends z.ZodTypeAny>(schema: z.ZodArray<T>) => {
-  return schema.transform((data, ctx) => {
-    console.log(`Array data:`, {
-      length: data?.length,
-      data: data
-    });
-    return data;
-  });
+const commonFields = {
+  title: z.string(),
+  description: z.string(),
+  meta_title: z.string().optional(),
+  date: z.union([z.date(), z.string()]).optional(),
+  image: z.string().optional(),
+  draft: z.boolean(),
 };
 
 // Homepage collection schema
 const homepageCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/homepage" }),
-  schema: createDebugSchema(z.object({
+  schema: z.object({
     hero: z.object({
       title: z.string(),
       content: z.string(),
@@ -59,7 +29,7 @@ const homepageCollection = defineCollection({
         link: z.string(),
       }),
       client: z.object({
-        images: loggedArray(z.array(z.string())).optional().default([]),
+        images: z.array(z.string()),
         clients: z.object({
           rating: z.string(),
           user: z.string(),
@@ -68,7 +38,7 @@ const homepageCollection = defineCollection({
     }),
     brand: z.object({
       title: z.string(),
-      logos: z.array(z.string()).min(1).optional().default([]),
+      logos: z.array(z.string()),
     }),
     about: z.object({
       title: z.string(),
@@ -144,16 +114,14 @@ const homepageCollection = defineCollection({
         link: z.string(),
       }),
     }),
-  }), 'homepage')
+  }),
 });
 
 // pricing
 const pricingCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/pricing" }),
   schema: z.object({
-    title: z.string(),
-    meta_title: z.string(),
-    description: z.string(),
+    ...commonFields,
     hero: z.object({
       title: z.string(),
       content: z.string(),
@@ -207,7 +175,7 @@ const pricingCollection = defineCollection({
           feature: z.array(
             z.object({
               details: z.tuple([
-                z.string(), // Feature name
+                z.string(),
                 z.union([z.string(), z.number(), z.boolean()]), // Free plan value
                 z.union([z.string(), z.number(), z.boolean()]), // Professional plan value
                 z.union([z.string(), z.number(), z.boolean()]), // Organization plan value
@@ -225,13 +193,13 @@ const pricingCollection = defineCollection({
 });
 
 // case
-const caseStudiesCollection = defineCollection({
-  type: 'content',
+const useCasesCollection = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "src/content/case",
+  }),
   schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    meta_title: z.string().optional(),
-    image: z.string().optional(),
+    ...commonFields,
     hero: z
       .object({
         title: z.string(),
@@ -254,38 +222,86 @@ const caseStudiesCollection = defineCollection({
 const blogCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/blog" }),
   schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
-    date: z.date().optional(),
-    image: z.string().optional(),
-    draft: z.boolean().optional(),
+    ...commonFields,
   }),
 });
 
 // features
-// const featuresCollection = defineCollection({ ... });
-
-// integration
-const platformsCollection = defineCollection({
+const featuresCollection = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
-    base: "src/content/platforms",
+    base: "src/content/features",
   }),
   schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    categories: z.array(
+    ...commonFields,
+    hero: z.object({
+      title: z.string(),
+      content: z.string(),
+    }),
+    section_1: z.object({
+      title: z.string(),
+      content: z.string(),
+      image: z.string(),
+      highlights: z.array(z.string()),
+      features: z.array(z.string()),
+      button: z.object({
+        enable: z.boolean(),
+        label: z.string(),
+        link: z.string(),
+      }),
+    }),
+    section_2: z.object({
+      badge: z.string(),
+      title: z.string(),
+      content: z.string(),
+      image_1: z.string(),
+      image_2: z.string(),
+      features: z.array(z.string()),
+      button: z.object({
+        enable: z.boolean(),
+        label: z.string(),
+        link: z.string(),
+      }),
+    }),
+    section_3: z.object({
+      title: z.string(),
+      icon: z.string(),
+      image: z.string(),
+      content: z.string(),
+    }),
+    section_4: z.object({
+      title: z.string(),
+      icon: z.string(),
+      image_1: z.string(),
+      image_2: z.string(),
+      content: z.string(),
+    }),
+    section_5: z.object({
+      title: z.string(),
+      icon: z.string(),
+      image: z.string(),
+      content: z.string(),
+    }),
+    review: z.object({
+      title: z.string(),
+      content: z.string(),
+    }),
+  }),
+});
+
+// integration
+const integrationCollection = defineCollection({
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "src/content/integration",
+  }),
+  schema: z.object({
+    ...commonFields,
+    integrations: z.array(
       z.object({
         name: z.string(),
-        description: z.string(),
-        platforms: z.array(
-          z.object({
-            name: z.string(),
-            logo: z.string(),
-            details: z.string(),
-          })
-        ),
+        logo: z.string(),
+        details: z.string(),
       })
     ),
   }),
@@ -298,10 +314,7 @@ const contactCollection = defineCollection({
     base: "src/content/contact",
   }),
   schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(), // Optional since it's an empty string
-    description: z.string(),
-    draft: z.boolean(),
+    ...commonFields,
     connect: z.array(
       z.object({
         key: z.string(), // Label or description of the contact method
@@ -319,10 +332,7 @@ const aboutCollection = defineCollection({
     base: "src/content/about",
   }),
   schema: z.object({
-    title: z.string().optional(),
-    meta_title: z.string(),
-    description: z.string().optional(),
-    image: z.string().optional(),
+    ...commonFields,
     hero: z.object({
       badge: z.string(),
       title: z.string(),
@@ -382,9 +392,9 @@ const faqSectionCollection = defineCollection({
     base: "src/content/sections",
   }),
   schema: z.object({
+    enable: z.boolean(),
     title: z.string(),
     description: z.string(),
-    meta_title: z.string(),
     faqs: z.array(
       z.object({
         question: z.string(),
@@ -401,9 +411,7 @@ const demoCollection = defineCollection({
     base: "src/content/demo",
   }),
   schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string(),
+    ...commonFields,
     hero: z.object({
       title: z.string(),
       content: z.string(),
@@ -424,8 +432,9 @@ const demoCollection = defineCollection({
 const brandSectionCollection = defineCollection({
   loader: glob({ pattern: "brand.{md,mdx}", base: "src/content/sections" }),
   schema: z.object({
+    enable: z.boolean(),
     title: z.string(),
-    logos: z.array(z.string()).min(1).optional().default([]),
+    logos: z.array(z.string()),
   }),
 });
 
@@ -436,9 +445,7 @@ const changelogCollection = defineCollection({
     base: "src/content/changelog",
   }),
   schema: z.object({
-    title: z.string(),
-    meta_title: z.string(),
-    description: z.string(),
+    ...commonFields,
     logs: z.array(
       z.object({
         version: z.string(),
@@ -458,6 +465,7 @@ const reviewSectionCollection = defineCollection({
     base: "src/content/sections",
   }),
   schema: z.object({
+    enable: z.boolean(),
     reviews: z.array(
       z.object({
         user: z.string(),
@@ -476,6 +484,7 @@ const ctaSectionCollection = defineCollection({
     base: "src/content/sections",
   }),
   schema: z.object({
+    enable: z.boolean(),
     title: z.string(),
     content: z.string(),
     button: z.object({
@@ -491,10 +500,7 @@ const ctaSectionCollection = defineCollection({
 const pagesCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/pages" }),
   schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
-    image: z.string().optional(),
+    ...commonFields,
     badge: z.string().optional(),
     button: z
       .object({
@@ -503,84 +509,6 @@ const pagesCollection = defineCollection({
         link: z.string(),
       })
       .optional(),
-    draft: z.boolean().optional(),
-  }),
-});
-
-// services collection
-const servicesCollection = defineCollection({
-  loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: "src/content/services",
-  }),
-  schema: z.object({
-    title: z.string(),
-    meta_title: z.string(),
-    description: z.string(),
-    hero: z.object({
-      title: z.string(),
-      content: z.string(),
-    }),
-    services: z.array(
-      z.object({
-        title: z.string(),
-        description: z.string(),
-        icon: z.string(),
-        image: z.string(),
-        link: z.string(),
-        badge: z.string(),
-        highlights: z.array(z.string()),
-      })
-    ).optional(),
-    section_1: z.object({
-      title: z.string(),
-      content: z.string(),
-      image: z.string(),
-      highlights: z.array(z.string()),
-      features: z.array(z.string()),
-      button: z.object({
-        enable: z.boolean(),
-        label: z.string(),
-        link: z.string(),
-      }),
-    }).optional(),
-    section_2: z.object({
-      badge: z.string(),
-      title: z.string(),
-      content: z.string(),
-      image_1: z.string(),
-      image_2: z.string(),
-      features: z.array(z.string()),
-      button: z.object({
-        enable: z.boolean(),
-        label: z.string(),
-        link: z.string(),
-      }),
-    }).optional(),
-    section_3: z.object({
-      title: z.string(),
-      icon: z.string(),
-      image: z.string(),
-      content: z.string(),
-    }).optional(),
-    section_4: z.object({
-      title: z.string(),
-      icon: z.string(),
-      image_1: z.string(),
-      image_2: z.string(),
-      content: z.string(),
-    }).optional(),
-    section_5: z.object({
-      title: z.string(),
-      icon: z.string(),
-      image: z.string(),
-      content: z.string(),
-      highlights: z.array(z.string()).optional(),
-    }).optional(),
-    review: z.object({
-      title: z.string(),
-      content: z.string(),
-    }).optional(),
   }),
 });
 
@@ -588,17 +516,14 @@ const servicesCollection = defineCollection({
 export const collections = {
   about: aboutCollection,
   blog: blogCollection,
-  "case-studies": caseStudiesCollection,
+  case: useCasesCollection,
   changelog: changelogCollection,
-  homepage: {
-    ...homepageCollection,
-    transform: debugCollection
-  },
+  homepage: homepageCollection,
   pricing: pricingCollection,
   contact: contactCollection,
   demo: demoCollection,
-  services: servicesCollection,
-  platforms: platformsCollection,
+  features: featuresCollection,
+  integration: integrationCollection,
   faqSection: faqSectionCollection,
   reviewSection: reviewSectionCollection,
   brandSection: brandSectionCollection,

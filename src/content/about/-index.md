@@ -1,35 +1,37 @@
 ---
-title: "About Conversion Collective"
-meta_title: "About | Conversion Collective"
-description: "Performance marketing agency specializing in content arbitrage and RSOC campaigns"
-image: "/images/about/hero.png"
+title: "About"
+meta_title: "About"
+description: ""
+image: ""
+draft: false
+
 hero:
   badge: "ABOUT US"
-  title: "Transforming Digital Marketing Through AI and Automation"
-  content: "Founded by performance marketing veterans, we help clients scale their campaigns while maintaining profitability through advanced AI tools and expert optimization."
+  title: "We’ve here to help you build, manage & protect your wealth properly"
+  content: "Started the journey from 2015, our mission is always to help our customers <br> grow their finance, manage their wealth without wasting a lot."
   achievement:
-    - icon: "/images/about/stats.png"
-      details: "Doubled client ad spend while maintaining ROAS targets"
-    - icon: "/images/about/growth.png"
-      details: "Managing campaigns from $10K to $1M+ monthly spend"
+    - icon: "/images/about/badge.png"
+      details: "Awarded 3 times as the popular Startup in Berlin."
+    - icon: "/images/about/bar.png"
+      details: "Helped over 7500+ businesses to grow their revenue worldwide."
 
 offering:
-  title: "We combine deep marketing expertise with proprietary AI tools to deliver exceptional results for content arbitrage and RSOC campaigns"
+  title: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS is a long established fact that a reader. Many desktop publishing packages and web page editors now use"
   offers:
     - type: "image"
-      image: "/images/about/campaigns.png"
+      image: "/images/about/offer-1.png"
     - type: "image"
-      image: "/images/about/bid-notification.png"
+      image: "/images/about/offer-2.png"
     - type: "review"
-      quote: "Working with Max and his team was a game-changer... they took us to the next level."
+      quote: "Using this SaaS has transformed our user workflow. We couldn't be happier This is SaaS has simplified our data."
       image: "/images/about/user.png"
-      author: "Michael"
-      role: "Founder"
+      author: "Cameron Williamson"
+      role: "Web Designer"
       rating: 5
     - type: "text"
-      title: "Innovation"
-      content: "Proprietary AI tools"
-      data: "Ad Nexus"
+      title: "Total Customers"
+      content: "We helped businesses to grow fast"
+      data: "657k"
     - type: "image"
       image: "/images/about/offer-3.png"
 
@@ -44,10 +46,10 @@ company:
     - "/images/homepage/brands/6.svg"
 
 call_to_action:
-  title: "Join our network of media buyers"
-  description: "Earn $50K-$150K additional annual income managing campaigns with our AI tools"
+  title: "Join our team and make your mark"
+  description: "Themefisher gives you the blocks needed to create a truly professional <br> website for your SaaS is a long established fact that a reader."
   button:
     enable: true
-    label: "Work With Us"
-    link: "/contact"
+    label: "See Open Role"
+    link: "/about"
 ---

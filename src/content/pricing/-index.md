@@ -2,6 +2,9 @@
 title: "Pricing"
 meta_title: "Pricing"
 description: "This is pricing page for blazex"
+image: ""
+draft: false
+
 hero:
   title: "Plan that match your needs"
   content: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS is a long established fact that a reader."

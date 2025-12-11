@@ -7,13 +7,13 @@
         "accent": "#b3fc6a",
         "tertiary": "#ff825c",
         "body": "#fff",
-        "border": "#fff3",
-        "theme_light": "#f6f6f9"
+        "border": "#e5ede5",
+        "light": "#f6f6f9"
       },
       "text_color": {
-        "default": "#181c39",
-        "dark": "#0A0A0A",
-        "light": "#fff"
+        "text": "#181c39",
+        "text-dark": "#0A0A0A",
+        "text-light": "#fff"
       }
     }
   },

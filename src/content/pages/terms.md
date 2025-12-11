@@ -1,61 +1,50 @@
 ---
-title: "Privacy Policy"
-badge: "LAST UPDATED AT: FEB 3, 2025"
+title: "Terms & Conditions"
 meta_title: ""
 description: "This is the meta description"
+image: ""
 draft: false
+
+badge: "LAST UPDATED AT: SEP 24, 2025"
 header:
-  title: "Privacy Policy"
-  content: 'Welcome to Conversion Collective. This Privacy Policy explains how we collect, use, and protect your information when you visit our website. By using our site, you agree to the terms outlined in this policy.'
+  title: "Terms of Service"
+  content: 'Welcome to Sentenel Security''s website and online services. By accessing or using our website, services, or any of our digital offerings, you agree to be bound by these Terms of Service ("Terms"). Please read these Terms carefully before using our services.'
 ---
 
 ##### Introduction
 
-Conversion Collective respects your privacy and is committed to protecting any information that may be collected when you interact with our website. This Privacy Policy outlines the types of data we may collect and how we handle that data.
+By accessing and placing an order with Simplly, you confirm that you are in agreement with and bound by the terms and conditions contained in the Terms Of Use outlined below. These terms apply to the entire website and any email or other type of communication between you and Simplly.
 
-##### Information We Collect
+Under no circumstances shall Simplly team be liable for any direct, indirect, special, incidental or consequential damages, including, but not limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if Simplly team or an authorized representative has been advised of the possibility of such damages.
 
-We do not actively collect or store personal information from visitors. However, like most websites, we may gather standard analytics data, which may include:
+If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof. Simplly will not be responsible for any outcome that may occur during the course of usage of our resources. We reserve the rights to change prices and revise the resources usage policy in any moment.
 
-- IP addresses
-- Browser type and settings
-- Date and time of access
-- Referring website
-- Pages visited
-- Other diagnostic data
+##### Products
 
-##### How We Use Your Information
+All products are 100% digital and delivered through email & Lemon Squeezy dashboard.
 
-The limited data we collect is used solely for:
+##### What you cannot do
 
-- Monitoring and improving website performance
-- Understanding visitor interactions
-- Ensuring security and preventing fraud
+1.You do not have the rights to redistribute, resell, lease, license, sub-license, transfer or offer the file downloaded.
 
-We do **not** sell, share, or use your data for marketing or lead generation purposes.
+2.You are not allowed to claim credit or ownership for any of the assets found on our website.
 
-##### Cookies and Tracking Technologies
+##### Security & Payments
 
-We may use cookies and similar tracking technologies to improve user experience. These cookies help us understand how visitors interact with our website. You can manage your cookie preferences through your browser settings.
+All payments are processed securely through lemonsqueezy.com. Simplly does not directly process payments through the website. Feel free to contact us about our security policies.
 
-##### Data Security
+##### Data Collection
 
-We take reasonable steps to ensure any collected data is secure. However, no internet transmission or storage system is 100% secure, and we cannot guarantee absolute security.
+We have access to the email address of our users who are downloading or purchasing from us. This is important to give future support to our customers.
 
-##### Third-Party Links
+Also, when a user is purchasing from us, that user will be automatically signed up on our email subscriber list for future news, updates and promotions. If any user wants, he/she can unsubscribe anytime using the unsubscribe link provided on the email.
 
-Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites and encourage you to review their privacy policies.
+To know more about data collection, please read our Privacy Policy.
 
-##### Changes to This Policy
+##### Support
 
-We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last Updated" date at the top of this page.
+We, at Simplly stand by our products and believe that they are the best possible solutions we deliver. However, if you come across any issues or incompatibilities, you can open up a ticket at our support center and allow us to help you resolve your issue. Dedicated support is promised to only those who possess an active license. Free versions are not promised for instant support.
 
-##### Contact Us
+##### Conclusion
 
-If you have any questions about this Privacy Policy, please contact us at:
-
-**Conversion Collective**  
-Email: contact@conversioncollective.io
-
-By using our website, you agree to the terms of this Privacy Policy.
-
+We’ve included many of these terms to legally protect ourselves, but if you have an issue, always feel free to email us at https://themefisher.com/contact and we’ll do our best to resolve it in a fair and timely fashion.

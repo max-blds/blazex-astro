@@ -1,43 +1,63 @@
 {
   "main": [
     {
-      "name": "About Us",
-      "url": "/about"
-    },
-    {
-      "name": "Services",
-      "url": "/services",
+      "name": "All Pages",
+      "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Marketing",
-          "url": "/services/marketing"
+          "name": "Home",
+          "url": "/"
         },
         {
-          "name": "Creative",
-          "url": "/services/creative"
+          "name": "Case Studies",
+          "url": "/case"
         },
         {
-          "name": "Rapid Development",
-          "url": "/services/development"
+          "name": "Blog",
+          "url": "/blog"
+        },
+        {
+          "name": "Features",
+          "url": "/features"
+        },
+        {
+          "name": "Integration",
+          "url": "/integration"
+        },
+        {
+          "name": "Changelog",
+          "url": "/changelog"
+        },
+        {
+          "name": "Request a Demo",
+          "url": "/demo"
+        },
+        {
+          "name": "Terms",
+          "url": "/terms"
+        },
+        {
+          "name": "Privacy",
+          "url": "/privacy"
+        },
+        {
+          "name": "404",
+          "url": "/404"
         }
       ]
     },
     {
-      "name": "Case Studies",
-      "url": "/case-studies"
-    },
-    {
-      "name": "Platforms",
-      "url": "/platforms"
+      "name": "Pricing",
+      "url": "/pricing"
     },
     {
       "name": "Contact",
       "url": "/contact"
     },
     {
-      "name": "LaunchBox",
-      "url": "https://launchbox-new.conversioncollective.io/"
+      "name": "About",
+      "url": "/about"
     }
   ],
   "footer": [
@@ -45,20 +65,16 @@
       "title": "Solutions",
       "children": [
         {
-          "name": "Services",
-          "url": "/services"
+          "name": "Freelancer",
+          "url": "/contact"
         },
         {
-          "name": "Case Studies",
-          "url": "/case-studies"
+          "name": "Data Analytics",
+          "url": "/contact"
         },
         {
-          "name": "Platforms",
-          "url": "/platforms"
-        },
-        {
-          "name": "LaunchBox",
-          "url": "https://launchbox-new.conversioncollective.io/"
+          "name": "Small Business",
+          "url": "/contact"
         }
       ]
     },
@@ -70,7 +86,7 @@
           "url": "/about"
         },
         {
-          "name": "Careers",
+          "name": "Career",
           "url": "/contact"
         },
         {
@@ -80,15 +96,36 @@
       ]
     },
     {
-      "title": "Legal",
+      "title": "Resource",
       "children": [
         {
-          "name": "Terms",
-          "url": "/terms"
+          "name": "Customers",
+          "url": "/contact"
         },
         {
-          "name": "Privacy",
-          "url": "/privacy"
+          "name": "Stategic Finance",
+          "url": "/contact"
+        },
+        {
+          "name": "Ebooks & Guides",
+          "url": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Features",
+      "children": [
+        {
+          "name": "Freelancer",
+          "url": "/contact"
+        },
+        {
+          "name": "Data Analytics",
+          "url": "/contact"
+        },
+        {
+          "name": "Small Business",
+          "url": "/contact"
         }
       ]
     }

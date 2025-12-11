@@ -1,7 +1,9 @@
 ---
 title: "Demo"
-meta_title: ""
+meta_title: "Demo"
 description: ""
+image: ""
+draft: false
 
 hero:
   title: "Request a demo"

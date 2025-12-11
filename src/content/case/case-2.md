@@ -1,10 +1,18 @@
 ---
-title: "Building a Navigation Component with Variables"
-meta_title: ""
-description: "Building a Navigation Component with Variables"
-date: 2025-04-04T05:00:00Z
-image: "/images/blog/blog-4.png"
+title: "Plagma sees over 300% ROI in a month."
+meta_title: "Plagma sees over 300% ROI in a month."
+description: "Themefisher gives you the blocks needed to create a truly professional website for your SaaS."
+image: "/images/case/case-2.png"
 draft: false
+
+badge: "WEBSITE ROI"
+stats:
+  - key: "Worldwide client"
+    value: "30k+"
+  - key: "Top talents"
+    value: "5%"
+  - key: "Doller payout"
+    value: "8mil"
 ---
 
 #### Introduction

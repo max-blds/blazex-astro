@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Conversion Collective - Performance Marketing Agency",
-    "base_url": "http://conversioncollective.io/",
+    "title": "BlazeX - SaaS & Startup Framer Template",
+    "base_url": "https://blazex-astro.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "119",
     "logo_height": "40",
-    "logo_text": "Conversion Collective"
+    "logo_text": "blazex"
   },
 
   "settings": {
@@ -20,32 +20,30 @@
   },
 
   "subscription": {
-    "enable": false,
+    "enable": true,
     "form_action": "#"
   },
 
   "params": {
     "contact_form_action": "#",
-    "tally_free_500_url": "https://tally.so/embed/wvkBKd?hideTitle=1&transparentBackground=1&dynamicHeight=1",
-    "footer_text": "Conversion Collective manages all aspects of campaign management from creative to optimization, helping clients achieve their ROAS goals.",
-    "copyright": "Copyright © 2024 All Rights Reserved by Conversion Collective"
+    "footer_text": "Themefisher gives you the blocks <br> needed to create a truly professional <br> website for your SaaS.",
+    "copyright": "Copyright © 2025 All Rights Reserved by [Themefisher](https://themefisher.com/)"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Contact Us",
-    "link": "#contact"
+    "label": "Get This Template",
+    "link": "https://themefisher.com/products/blazex-astro"
   },
 
-  "disqus": {
+    "google_tag_manager": {
     "enable": false,
-    "shortname": "",
-    "settings": {}
+    "gtm_id": "GTM-XXXXXX"
   },
 
   "metadata": {
-    "meta_author": "Conversion Collective",
-    "meta_image": "/images/homepage/home-hero.png",
-    "meta_description": "Performance marketing agency specializing in Content arbitrage and RSOC campaigns"
+    "meta_author": "Themefisher",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Sass theme for Astro"
   }
 }

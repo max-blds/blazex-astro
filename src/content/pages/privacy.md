@@ -1,9 +1,11 @@
 ---
 title: "Privacy Policy"
 meta_title: ""
-badge: "LAST UPDATED AT: SEP 24, 2023"
 description: "this is meta description"
+image: ""
 draft: false
+
+badge: "LAST UPDATED AT: SEP 24, 2025"
 header:
   title: "Prioritizing Your Privacy: Our **Commitment to Data Protection**"
   content: "At Sentinel Security, we understand the paramount importance of safeguarding the privacy and personal information of our clients, partners, and website visitors."

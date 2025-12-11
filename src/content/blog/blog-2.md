@@ -2,7 +2,7 @@
 title: "Plagma sees over 300% ROI in a month."
 meta_title: ""
 description: "Plagma sees over 300% ROI in a month."
-date: 2024-04-04T05:00:00Z
+date: 2025-04-04T05:00:00Z
 image: "/images/blog/blog-2.png"
 draft: false
 ---

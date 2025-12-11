@@ -1,13 +1,12 @@
 ---
+enable: true
 reviews:
-  - user: "Michael"
-    designation: "Founder, Amicus (QuizGriz)"
-    comment: "Working with Max and his team was a game-changer. They scaled us into new platforms, managed everything seamlessly, and were rock solid during our sale process... They took us to the next level."
-    rating: 5
-
-  - user: "Tyrone"
-    designation: "CEO, NotchUp"
-    comment: "Their AI-driven approach helped us triple loan originations in just 90 days. The automated systems they built were crucial in securing our $1M funding round."
-    rating: 5
-
+  - user: "Cameron Williamson"
+    designation: "Co-founder, Markar"
+    comment: "Using this SaaS has transformed our user BlazeX workflow. We couldn't be happier This is SaaS has simplified our data."
+    rating: 4.5
+  - user: "Cameron Williamson"
+    designation: "Co-founder, Markar"
+    comment: "Using this SaaS has transformed our user BlazeX workflow. We couldn't be happier This is SaaS has simplified our data."
+    rating: 4.5
 ---
