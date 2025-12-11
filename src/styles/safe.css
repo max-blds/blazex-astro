@@ -1,0 +1,21 @@
+/* navbar toggler */
+input#nav-toggle:checked + label #show-button {
+  @apply hidden;
+}
+
+input#nav-toggle:checked + label #hide-button {
+  @apply block;
+}
+
+input#nav-toggle:checked ~ #nav-menu {
+  @apply max-lg:block;
+}
+
+/* form style */
+.form-input {
+  @apply w-full rounded-lg border-text/10 bg-light p-5 text-text-dark hover:bg-body placeholder:text-[#0a0a0a4d] focus:border-text/10 focus:ring-transparent;
+}
+
+.form-label {
+  @apply mb-2 block font-medium text-text-dark;
+}
