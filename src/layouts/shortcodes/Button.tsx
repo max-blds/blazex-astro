@@ -17,19 +17,17 @@ const Button = ({
   return (
     <a
       href={link}
-      target="_blank"
-      rel={`noopener noreferrer ${
-        rel ? (rel === "follow" ? "" : rel) : "nofollow"
-      }`}
-      className={`btn ${className} ${
-        style === "outline"
-          ? "btn-outline-primary flex items-center group"
-          : "btn-primary"
-      }`}
+      target={link.startsWith("http") ? "_blank" : "_self"}
+      rel={`noopener noreferrer ${rel ? (rel === "follow" ? "" : rel) : "nofollow"
+        }`}
+      className={`inline btn no-underline ${className} ${style === "outline"
+        ? "btn-outline-primary flex items-center group"
+        : "btn-primary text-text-light"
+        }`}
     >
       {label}
       {style === "outline" && (
-        <FaAngleRight className="ml-2 transition-transform duration-300 group-hover:translate-x-2" />
+        <FaAngleRight className="inline ml-2 transition-transform duration-300 group-hover:translate-x-2" />
       )}
     </a>
   );
