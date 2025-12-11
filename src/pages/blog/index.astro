@@ -1,25 +1,19 @@
 ---
-import BlogCard from "@/layouts/components/BlogCard.astro";
+import BlogCard from "@/components/BlogCard.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
+import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
-import type { CollectionEntry, CollectionKey } from "astro:content";
-import { getEntry } from "astro:content";
 
 const { blog_folder } = config.settings;
-const blogIndex = (await getEntry(
-  blog_folder as any,
-  "-index"
-)) as CollectionEntry<"blog">;
 
-const blogs = await getSinglePage(blog_folder as CollectionKey);
+const blogIndex = await getListPage(blog_folder, "-index");
+if (blogIndex.data.draft) {
+  return Astro.redirect("/404");
+}
 
-const call_to_action = (await getEntry(
-  "ctaSection",
-  "call-to-action"
-)) as CollectionEntry<"ctaSection">;
+const blogs = await getSinglePage(blog_folder);
 ---
 
 <Base title="blog" meta_title="blog" description="description">
@@ -47,5 +41,5 @@ const call_to_action = (await getEntry(
     </div>
   </section>
 
-  <CallToAction cta={call_to_action.data} />
+  <CallToAction />
 </Base>
